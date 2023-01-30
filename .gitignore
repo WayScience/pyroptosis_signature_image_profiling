@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore BaSiCPy (is not being used)
+0.wave1_data/1.preprocessing_data/BaSiCPy
+0.wave1_data/1.preprocessing_data/Illumination_Correction_BaSiCPy.ipynb
