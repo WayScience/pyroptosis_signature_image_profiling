@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Results xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.perkinelmer.com/PEHH/HarmonyV5">
+  <Version>2</Version>
+  <ProfilesComplete>1</ProfilesComplete>
+  <AggregatedQuality Scope="Background">1</AggregatedQuality>
+  <AggregatedQuality Scope="Foreground">1</AggregatedQuality>
+  <Quality ChannelID="1" Scope="Background">1</Quality>
+  <Quality ChannelID="1" Scope="Foreground">1</Quality>
+  <Quality ChannelID="2" Scope="Background">1</Quality>
+  <Quality ChannelID="2" Scope="Foreground">1</Quality>
+  <Count ChannelID="1" Scope="Background">21</Count>
+  <Count ChannelID="1" Scope="Foreground">64</Count>
+  <Count ChannelID="2" Scope="Background">11</Count>
+  <Count ChannelID="2" Scope="Foreground">64</Count>
+  <Map>
+    <Entry ChannelID="1">
+      <FlatfieldProfile>{Background: {Character: NonFlat, Mean: 218.40037, NoiseConst: 1.5430566, NonFlatness: {Corrected: 0.028163351, Original: 0.34092844, Random: 0.031572949}, Profile: {Coefficients: [[1.0822], [0.0357, -0.0148], [-0.2432, -0.0116, -0.1215], [-0.1745, 0.2303, 0.0837, 0.1099], [-1.4726, 0.1221, -1.0234, -0.0263, -2.1075]], Dims: [2160, 2160], Origin: [1079.5, 1079.5], Scale: [0.00046296296, 0.00046296296], Type: Polynomial}, Quality: 1.0}, Channel: 1, ChannelName: HOECHST 33342, Foreground: {Character: NonFlat, NonFlatness: {Original: 0.58261341, Random: 0.094144722}, Profile: {Coefficients: [[1.0877], [0.0176, -0.1188], [0.3225, 0.3443, -0.4019], [-0.1833, 0.9494, 0.305, 0.7232], [-2.9742, -0.8577, -3.2665, -0.8901, -1.6982]], Dims: [2160, 2160], Origin: [1079.5, 1079.5], Scale: [0.00046296296, 0.00046296296], Type: Polynomial}, Quality: 1.0}, Version: Acapella:2013}</FlatfieldProfile>
+    </Entry>
+    <Entry ChannelID="2">
+      <FlatfieldProfile>{Background: {Character: NonFlat, Mean: 244.26865, NoiseConst: 1.5455171, NonFlatness: {Corrected: 0.026395664, Original: 0.3757242, Random: 0.024152266}, Profile: {Coefficients: [[1.1353], [-0.0234, -0.0346], [-0.8491, 0.0176, -0.5771], [0.0057, 0.1316, 0.1065, 0.1243], [-0.5594, -0.1084, 0.9607, -0.0731, -1.2922]], Dims: [2160, 2160], Origin: [1079.5, 1079.5], Scale: [0.00046296296, 0.00046296296], Type: Polynomial}, Quality: 1.0}, Channel: 2, ChannelName: Alexa 700_narrow, Foreground: {Character: NonFlat, NonFlatness: {Original: 0.5472393, Random: 0.18537278}, Profile: {Coefficients: [[1.1829], [0.0203, 0.0544], [-0.6564, -0.1975, -2.011], [-0.1133, -0.1123, 0.3633, 0.2694], [-2.3805, 0.9945, 0.3196, 0.2657, 5.3501]], Dims: [2160, 2160], Origin: [1079.5, 1079.5], Scale: [0.00046296296, 0.00046296296], Type: Polynomial}, Quality: 1.0}, Version: Acapella:2013}</FlatfieldProfile>
+    </Entry>
+  </Map>
+</Results>
