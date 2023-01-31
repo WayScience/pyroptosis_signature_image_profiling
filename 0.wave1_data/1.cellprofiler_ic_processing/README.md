@@ -1,6 +1,6 @@
 # Create initial LoadData csv to calculate illumination correction function
 
-In this module, we present the process for creation of a LoadData csv and CellProfiler pipeline for calculating an illumination correction function for each channel.
+In this module, we create a LoadData csv and CellProfiler pipeline for calculating an illumination correction function for each channel.
 
 ## pe2loaddata
 
@@ -19,12 +19,10 @@ We are using CellProfiler v4.2.4 for all pipelines.
 
 ## Step 2: Install pe2loaddata
 
-Using the instructions from their Github, you can install pe2loaddata by running the code block below in the `0.wave1_data/1.cellprofiler_ic_processing/` directory.
+Using the code below, install `pe2loaddata`.
 
 ```sh
-git clone https://github.com/broadinstitute/pe2loaddata.git
-cd pe2loaddata/
-pip install -e .
+pip install git+https://github.com/broadinstitute/pe2loaddata.git@0426dd6b9d8b3242294a6fbdef7c4e1ee762a4cc
 ```
 
 ## Step 3: Create LoadData csv
