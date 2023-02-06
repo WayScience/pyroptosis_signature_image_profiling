@@ -50,7 +50,7 @@ def create_loaddata_illum_csv(
 
 # ## Set paths
 # 
-# **Note:** All paths must be full and not relative since CellProfiler will need to find the images based on your local machine. Please change the `/home/jenna` part of the path to reflect your machine.
+# **Note:** All paths must be absolute since CellProfiler will need to find the images based on your local machine. Please change the `/home/jenna` part of the path to reflect your machine.
 
 # In[3]:
 
