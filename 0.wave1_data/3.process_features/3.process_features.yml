@@ -13,6 +13,7 @@ dependencies:
   - conda-forge::scipy=1.7
   - conda-forge::numpy=1.22
   - conda-forge::scikit-learn
+  # Sqlalchemy must be downloaded with conda to override the pip install due to issue with latest version 
   - conda-forge::sqlalchemy=1.4.42
   - pip:
     - git+https://github.com/cytomining/pycytominer@afac3ea16818ad25f37318ecd5c5090c0eff5806
