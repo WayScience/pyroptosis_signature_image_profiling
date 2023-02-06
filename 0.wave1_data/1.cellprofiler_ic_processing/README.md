@@ -31,12 +31,12 @@ To create the LoadData csv for CellProfiler, the format to is as follows:
 
 > pe2loaddata --index-directory <index-directory> config.yml output.csv
 
-The `<index-directory>` will include all of the images along with the `Index.idx.xml` file.
+To create the LoadData csv, make sure to change the paths within the [create_loaddata_csv.ipynb](create_loaddata_csv.ipynb) to reflect your local machine paths before running the code below (e.g. a local path for my computer starts with `/home/jenna`).
 
-Use the command line below:
+Run this code in terminal to create the csv file:
 
 ```sh
-pe2loaddata --index-directory /home/jenna/Interstellar_Project/0.wave1_data/0.download_data/70117_20230118MM1_AbTest_V2__2023-01-25T16_44_54-Measurement1/Images config.yml wave1.csv
+bash create_loaddata_illum_csv.sh
 ```
 
 ## Step 4: Calculate IC function for each channel in CellProfiler

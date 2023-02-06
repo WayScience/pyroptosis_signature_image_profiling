@@ -1,0 +1,267 @@
+CellProfiler Pipeline: http://www.cellprofiler.org
+Version:5
+DateRevision:424
+GitHash:
+ModuleCount:17
+HasImagePlaneDetails:False
+
+LoadData:[module_num:1|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Input data file location:Default Input Folder sub-folder|Interstellar_Project/0.wave1_data/2.cellprofiler_analysis
+    Name of the file:wave1_loaddata_with_illum.csv
+    Load images based on this data?:Yes
+    Base image location:Default Input Folder|
+    Process just a range of rows?:No
+    Rows to process:1,100000
+    Group images by metadata?:No
+    Select metadata tags for grouping:
+    Rescale intensities?:Yes
+
+CorrectIlluminationApply:[module_num:2|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:OrigDNA
+    Name the output image:CorrDNA
+    Select the illumination function:IllumDNA
+    Select how the illumination function is applied:Divide
+    Select the input image:OrigGasderminD
+    Name the output image:CorrGasderminD
+    Select the illumination function:IllumGasderminD
+    Select how the illumination function is applied:Divide
+    Set output image values less than 0 equal to 0?:Yes
+    Set output image values greater than 1 equal to 1?:Yes
+
+MeasureImageQuality:[module_num:3|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Calculate metrics for which images?:Select...
+    Image count:1
+    Scale count:1
+    Threshold count:1
+    Select the images to measure:CorrDNA, CorrGasderminD
+    Include the image rescaling value?:Yes
+    Calculate blur metrics?:Yes
+    Spatial scale for blur measurements:20
+    Calculate saturation metrics?:No
+    Calculate intensity metrics?:No
+    Calculate thresholds?:No
+    Use all thresholding methods?:No
+    Select a thresholding method:Otsu
+    Typical fraction of the image covered by objects:0.1
+    Two-class or three-class thresholding?:Two classes
+    Minimize the weighted variance or the entropy?:Weighted variance
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+
+FlagImage:[module_num:4|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Hidden:1
+    Hidden:1
+    Name the flag's category:Metadata
+    Name the flag:BlurFlag
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PowerLogLogSlope_CorrDNA
+    Flag images based on low values?:Yes
+    Minimum value:-2.15
+    Flag images based on high values?:No
+    Maximum value:-2.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Allow fuzzy feature matching?:No
+    Ignore flag skips on last cycle?:No
+
+IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:CorrDNA
+    Name the primary objects to be identified:Nuclei
+    Typical diameter of objects, in pixel units (Min,Max):20,65
+    Discard objects outside the diameter range?:Yes
+    Discard objects touching the border of the image?:Yes
+    Method to distinguish clumped objects:Shape
+    Method to draw dividing lines between clumped objects:Shape
+    Size of smoothing filter:10
+    Suppress local maxima that are closer than this minimum allowed distance:7.0
+    Speed up by using lower-resolution image to find local maxima?:Yes
+    Fill holes in identified objects?:After declumping only
+    Automatically calculate size of smoothing filter for declumping?:Yes
+    Automatically calculate minimum allowed distance between local maxima?:Yes
+    Handling of objects if excessive number of objects identified:Continue
+    Maximum number of objects:500
+    Use advanced settings?:Yes
+    Threshold setting version:12
+    Threshold strategy:Global
+    Thresholding method:Otsu
+    Threshold smoothing scale:1.3488
+    Threshold correction factor:1.0
+    Lower and upper bounds on threshold:0.0,1.0
+    Manual threshold:0.0
+    Select the measurement to threshold with:None
+    Two-class or three-class thresholding?:Three classes
+    Log transform before thresholding?:No
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+    Size of adaptive window:50
+    Lower outlier fraction:0.05
+    Upper outlier fraction:0.05
+    Averaging method:Mean
+    Variance method:Standard deviation
+    # of deviations:2.0
+    Thresholding method:Minimum Cross-Entropy
+
+DilateObjects:[module_num:6|svn_version:'Unknown'|variable_revision_number:1|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input object:Nuclei
+    Name the output object:DilatedNuclei
+    Structuring element:disk,25
+
+IdentifyTertiaryObjects:[module_num:7|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the larger identified objects:DilatedNuclei
+    Select the smaller identified objects:Nuclei
+    Name the tertiary objects to be identified:TranslocatedNuclei
+    Shrink smaller object prior to subtraction?:Yes
+
+MeasureObjectIntensity:[module_num:8|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrGasderminD
+    Select objects to measure:DilatedNuclei, Nuclei, TranslocatedNuclei
+
+MeasureImageIntensity:[module_num:9|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['NF1 used "Measure the intensity only from areas enclosed by objects" but for this I will measure whole image.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrGasderminD
+    Measure the intensity only from areas enclosed by objects?:No
+    Select input object sets:
+    Calculate custom percentiles:No
+    Specify percentiles to measure:10,90
+
+MeasureObjectIntensityDistribution:[module_num:10|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrGasderminD
+    Hidden:3
+    Hidden:1
+    Hidden:0
+    Calculate intensity Zernikes?:None
+    Maximum zernike moment:9
+    Select objects to measure:Nuclei
+    Object to use as center?:These objects
+    Select objects to use as centers:None
+    Select objects to measure:DilatedNuclei
+    Object to use as center?:These objects
+    Select objects to use as centers:None
+    Select objects to measure:TranslocatedNuclei
+    Object to use as center?:These objects
+    Select objects to use as centers:None
+    Scale the bins?:Yes
+    Number of bins:4
+    Maximum radius:100
+
+MeasureColocalization:[module_num:11|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrGasderminD
+    Set threshold as percentage of maximum intensity for the images:15.0
+    Select where to measure correlation:Within objects
+    Select objects to measure:DilatedNuclei, Nuclei, TranslocatedNuclei
+    Run all metrics?:Yes
+    Calculate correlation and slope metrics?:Yes
+    Calculate the Manders coefficients?:Yes
+    Calculate the Rank Weighted Colocalization coefficients?:Yes
+    Calculate the Overlap coefficients?:Yes
+    Calculate the Manders coefficients using Costes auto threshold?:Yes
+    Method for Costes thresholding:Faster
+
+MeasureGranularity:[module_num:12|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrGasderminD
+    Measure within objects?:Yes
+    Select objects to measure:DilatedNuclei, Nuclei, TranslocatedNuclei
+    Subsampling factor for granularity measurements:0.25
+    Subsampling factor for background reduction:0.25
+    Radius of structuring element:10
+    Range of the granular spectrum:16
+
+MeasureObjectNeighbors:[module_num:13|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select objects to measure:Nuclei
+    Select neighboring objects to measure:Nuclei
+    Method to determine neighbors:Expand until adjacent
+    Neighbor distance:5
+    Consider objects discarded for touching image border?:Yes
+    Retain the image of objects colored by numbers of neighbors?:No
+    Name the output image:ObjectNeighborCount
+    Select colormap:Blues
+    Retain the image of objects colored by percent of touching pixels?:No
+    Name the output image:PercentTouching
+    Select colormap:Oranges
+
+MeasureObjectNeighbors:[module_num:14|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select objects to measure:TranslocatedNuclei
+    Select neighboring objects to measure:TranslocatedNuclei
+    Method to determine neighbors:Expand until adjacent
+    Neighbor distance:5
+    Consider objects discarded for touching image border?:Yes
+    Retain the image of objects colored by numbers of neighbors?:No
+    Name the output image:ObjectNeighborCount
+    Select colormap:Blues
+    Retain the image of objects colored by percent of touching pixels?:No
+    Name the output image:PercentTouching
+    Select colormap:Oranges
+
+MeasureObjectSizeShape:[module_num:15|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select object sets to measure:DilatedNuclei, Nuclei, TranslocatedNuclei
+    Calculate the Zernike features?:Yes
+    Calculate the advanced features?:No
+
+MeasureTexture:[module_num:16|svn_version:'Unknown'|variable_revision_number:7|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrGasderminD
+    Select objects to measure:DilatedNuclei, Nuclei, TranslocatedNuclei
+    Enter how many gray levels to measure the texture at:256
+    Hidden:1
+    Measure whole images or objects?:Objects
+    Texture scale to measure:3
+
+ExportToDatabase:[module_num:17|svn_version:'Unknown'|variable_revision_number:28|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Database type:SQLite
+    Database name:DefaultDB
+    Add a prefix to table names?:No
+    Table prefix:MyExpt_
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/0.wave1_data/2.cellprofiler_analysis/analysis_output
+    Create a CellProfiler Analyst properties file?:No
+    Database host:
+    Username:
+    Password:
+    Name the SQLite database file:interstellar_wave1_dilate25.sqlite
+    Calculate the per-image mean values of object measurements?:Yes
+    Calculate the per-image median values of object measurements?:No
+    Calculate the per-image standard deviation values of object measurements?:No
+    Calculate the per-well mean values of object measurements?:No
+    Calculate the per-well median values of object measurements?:No
+    Calculate the per-well standard deviation values of object measurements?:No
+    Export measurements for all objects to the database?:Select...
+    Select the objects:DilatedNuclei,Nuclei,TranslocatedNuclei
+    Maximum # of characters in a column name:64
+    Create one table per object, a single object table or a single object view?:One table per object type
+    Enter an image url prepend if you plan to access your files via http:
+    Write image thumbnails directly to the database?:No
+    Select the images for which you want to save thumbnails:
+    Auto-scale thumbnail pixel intensities?:Yes
+    Select the plate type:None
+    Select the plate metadata:None
+    Select the well metadata:None
+    Include information for all images, using default values?:Yes
+    Properties image group count:1
+    Properties group field count:1
+    Properties filter field count:0
+    Workspace measurement count:1
+    Experiment name:Interstellar_wave1
+    Which objects should be used for locations?:None
+    Enter a phenotype class table name if using the Classifier tool in CellProfiler Analyst:
+    Export object relationships?:Yes
+    Overwrite without warning?:Never
+    Access CellProfiler Analyst images via URL?:No
+    Select the classification type:Object
+    Select an image to include:None
+    Use the image name for the display?:Yes
+    Image name:Channel1
+    Channel color:red
+    Do you want to add group fields?:No
+    Enter the name of the group:
+    Enter the per-image columns which define the group, separated by commas:ImageNumber, Image_Metadata_Plate, Image_Metadata_Well
+    Do you want to add filter fields?:No
+    Automatically create a filter for each plate?:No
+    Create a CellProfiler Analyst workspace file?:No
+    Select the measurement display tool:ScatterPlot
+    Type of measurement to plot on the X-axis:Image
+    Enter the object name:None
+    Select the X-axis measurement:None
+    Select the X-axis index:ImageNumber
+    Type of measurement to plot on the Y-axis:Image
+    Enter the object name:None
+    Select the Y-axis measurement:None
+    Select the Y-axis index:ImageNumber
