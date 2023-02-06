@@ -17,4 +17,11 @@ Make sure you are in the `0.wave1_data/3.process_features` directory before perf
 conda env create -f 3.process_features.yml
 ```
 
+## Step 2: Extract single cell features from each dilation pipeline
+
+Run this code in terminal to extract single cells and create csv file:
+
+```sh
+bash create_loaddata_illum_csv.sh
+```
 
