@@ -1,0 +1,30 @@
+channels:
+    HOECHST 33342: OrigDNA
+    Alexa 488: OrigASC_Nothing
+    Mito_641_narrow: OrigMito
+    Alexa 700_narrow: OrigASC_Spillover
+
+metadata:
+    Row: Row
+    Col: Col
+    FieldID: FieldID
+    PlaneID: PlaneID
+    ChannelID: ChannelID
+    ChannelName: ChannelName
+    ImageResolutionX: ImageResolutionX
+    ImageResolutionY: ImageResolutionY
+    ImageSizeX: ImageSizeX
+    ImageSizeY: ImageSizeY
+    BinningX: BinningX
+    BinningY: BinningY
+    MaxIntensity: MaxIntensity
+    PositionX: PositionX
+    PositionY: PositionY
+    PositionZ: PositionZ
+    AbsPositionZ: AbsPositionZ
+    AbsTime: AbsTime
+    MainExcitationWavelength: MainExcitationWavelength
+    MainEmissionWavelength: MainEmissionWavelength
+    ObjectiveMagnification: ObjectiveMagnification
+    ObjectiveNA: ObjectiveNA
+    ExposureTime: ExposureTime

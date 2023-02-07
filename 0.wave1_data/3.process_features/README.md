@@ -22,6 +22,6 @@ conda env create -f 3.process_features.yml
 Run this code in terminal to extract single cells and create csv file:
 
 ```sh
-bash create_loaddata_illum_csv.sh
+bash extract_sc_interstellar.sh
 ```
 

@@ -1,0 +1,11 @@
+name: pe2loaddata
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.9.12
+  - pip
+  - pathlib
+  - ipykernel
+  - pip:
+    - git+https://github.com/broadinstitute/pe2loaddata.git@0426dd6b9d8b3242294a6fbdef7c4e1ee762a4cc
