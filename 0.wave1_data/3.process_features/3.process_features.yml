@@ -13,6 +13,7 @@ dependencies:
   - conda-forge::scipy=1.7
   - conda-forge::numpy=1.22
   - conda-forge::scikit-learn
+  - conda-forge::plotnine
   # Sqlalchemy must be downloaded with conda to override the pip install due to issue with latest version 
   - conda-forge::sqlalchemy=1.4.42
   - pip:
