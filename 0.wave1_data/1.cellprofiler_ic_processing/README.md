@@ -19,24 +19,26 @@ We are using CellProfiler v4.2.4 for all pipelines.
 
 ## Step 2: Install pe2loaddata
 
-Using the code below, install `pe2loaddata`.
+Using the code below, install `pe2loaddata` using the [pe2loaddata_env.yml](pe2loaddata_env.yml) file.
 
 ```sh
-pip install git+https://github.com/broadinstitute/pe2loaddata.git@0426dd6b9d8b3242294a6fbdef7c4e1ee762a4cc
+conda env create -f pe2loaddata_env.yml
 ```
 
 ## Step 3: Create LoadData csv
 
 To create the LoadData csv for CellProfiler, the format to is as follows:
 
-> pe2loaddata --index-directory <index-directory> config.yml output.csv
+```sh
+pe2loaddata --index-directory <index-directory> config.yml output.csv
+```
 
-To create the LoadData csv, make sure to change the paths within the [create_loaddata_csv.ipynb](create_loaddata_csv.ipynb) to reflect your local machine paths before running the code below (e.g. a local path for my computer starts with `/home/jenna`).
+To create the LoadData csv, make sure to change the paths within the [create_loaddata_wave1_csv.ipynb](create_loaddata_wave1_csv.ipynb) to reflect your local machine paths before running the code below (e.g. a local path for my computer starts with `/home/jenna`).
 
 Run this code in terminal to create the csv file:
 
 ```sh
-bash create_loaddata_illum_csv.sh
+bash create_loaddata_wave1_csv.sh
 ```
 
 ## Step 4: Calculate IC function for each channel in CellProfiler
