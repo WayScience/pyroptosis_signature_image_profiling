@@ -7,7 +7,11 @@ import pandas as pd
 from sqlalchemy import create_engine
 import numpy as np
 
-def load_sqlite_as_df(sqlite_file:str, image_table_name:str="Per_Image",) -> pd.DataFrame:
+
+def load_sqlite_as_df(
+    sqlite_file: str,
+    image_table_name: str = "Per_Image",
+) -> pd.DataFrame:
     """
     load in table with image feature data from sqlite file
 
@@ -31,8 +35,9 @@ def load_sqlite_as_df(sqlite_file:str, image_table_name:str="Per_Image",) -> pd.
 
     return image_df
 
+
 def extract_image_features(image_feature_categories, image_df, image_cols, strata):
-    """Confirm that the input list of image features categories are present in the image table and then extract those features. 
+    """Confirm that the input list of image features categories are present in the image table and then extract those features.
     This is pulled from Pycytominer cyto_utils util.py and editted.
 
     Parameters
@@ -57,16 +62,8 @@ def extract_image_features(image_feature_categories, image_df, image_cols, strat
         ]
     )
 
+    # Add image features to the image_df
     image_features_df = image_df[image_features]
-
-    image_features_df.columns = [
-        f"Image_{x}"
-        if not x.startswith("Image_") and not x.startswith("Count_")
-        else f"Metadata_{x}"
-        if x.startswith("Count_")
-        else x
-        for x in image_features_df.columns
-    ]
 
     # Add image_cols and strata to the dataframe
     image_features_df = pd.concat(

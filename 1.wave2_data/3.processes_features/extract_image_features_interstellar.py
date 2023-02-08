@@ -10,7 +10,6 @@
 
 import pathlib
 import pandas as pd
-import numpy as np
 
 from pycytominer.cyto_utils import cells, output, util
 

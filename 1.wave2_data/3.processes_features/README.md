@@ -4,7 +4,7 @@ In this module, we extract image feature data from the CellProfiler .sqlite file
 
 ## Pycytominer
 
-We use [Pycytominer](https://github.com/cytomining/pycytominer) to perform the merging and extraction of the Interstellar wave 1 single cell features.
+We use [Pycytominer](https://github.com/cytomining/pycytominer) to perform the merging and extraction of the Interstellar wave 2 single cell features.
 
 For more information regarding the functions that we used, please see [the documentation](https://pycytominer.readthedocs.io/en/latest/pycytominer.cyto_utils.html#pycytominer.cyto_utils.cells.SingleCells.merge_single_cells) from the Pycytominer team.
 
