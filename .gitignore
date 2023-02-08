@@ -128,6 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# OS-specific files
+.DS_Store
+
 # ignore datasets as an individual would be downloading from a platform in the future
 0.wave1_data/0.download_data/70117_20230118MM1_AbTest_V2__2023-01-25T16_44_54-Measurement1
 1.wave2_data/0.download_data/70117_20230118MM1_AbTest_ASC__2023-01-27T13_47_00-Measurement1
