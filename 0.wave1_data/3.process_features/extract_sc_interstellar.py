@@ -11,7 +11,6 @@
 import pathlib
 import pandas as pd
 
-import pycytominer
 from pycytominer.cyto_utils import cells, output
 
 
@@ -31,12 +30,12 @@ output_dir = "data"
 
 
 # Set name and path of .sqlite file and path to metadata
-sql_file = "interstellar_wave1_dilate50.sqlite"
+sql_file = "interstellar_wave1_dilate100.sqlite"
 single_cell_file = f"sqlite:///{cp_dir}/analysis_output/{sql_file}"
-platemap_file = f"{cp_dir}/metadata/Interstellar_wave1_platemap.csv"
+platemap_file = "../../metadata/Interstellar_platemap.csv"
 
 # Set path with name for outputted data
-sc_output_file = pathlib.Path(f"{output_dir}/interstellar_wave1_dilate50_sc.csv.gz")
+sc_output_file = pathlib.Path(f"{output_dir}/interstellar_wave1_dilate100_sc.csv.gz")
 
 
 # ## Set up names for linking columns between tables in the database file
@@ -103,17 +102,25 @@ print(sc_df.shape)
 sc_df.head()
 
 
+# ## View info of the dataframe
+
+# In[8]:
+
+
+sc_df.info()
+
+
 # ---
 # 
 # ### Visualize basic count statistics
 
-# In[8]:
+# In[9]:
 
 
 sc_df.Metadata_treatment.value_counts()
 
 
-# In[9]:
+# In[10]:
 
 
 pd.crosstab(sc_df.Metadata_treatment, sc_df.Metadata_Well)
