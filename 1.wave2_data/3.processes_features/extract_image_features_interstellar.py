@@ -92,6 +92,7 @@ image_features_df.head()
 # In[8]:
 
 
+## Uses pycytominer annotate functionality to merge the platemap and image features and reorder the dataframe
 image_features_df = annotate(
     profiles=image_features_df,
     platemap=platemap_df,
@@ -105,17 +106,8 @@ image_features_df = annotate(
 # In[9]:
 
 
-def conditions(well_column):
-    """
-    function works to add condition based on the well column number for each single cell (row)
-    """
-    if well_column == 5 or 8:
-        return 8
-    if well_column == 6 or 7:
-        return 7
-
-# add the condition metadata as a column based on the function (adds to the end)
-image_features_df['Metadata_condition'] = image_features_df['Metadata_col'].map(conditions)
+# add the condition metadata as a column based on the dictionary (adds to the end)
+image_features_df['Metadata_condition'] = image_features_df['Metadata_col'].map({5 : 8, 8 : 8, 6 : 7, 7 : 7})
 # pop out the column from the dataframe
 condition_column = image_features_df.pop('Metadata_condition')
 # insert the column as the third index column in the dataframe
@@ -125,9 +117,17 @@ print(image_features_df.shape)
 image_features_df.head()
 
 
-# ## Save image features data frame as `csv.gz` file
+# ## Confirm that both conditions are being added to the column
 
 # In[10]:
+
+
+image_features_df['Metadata_condition'].unique()
+
+
+# ## Save image features data frame as `csv.gz` file
+
+# In[11]:
 
 
 # Save image feature data as a csv
@@ -139,7 +139,7 @@ image_features_df.head()
 
 # ## View info of the dataframe
 
-# In[11]:
+# In[12]:
 
 
 image_features_df.info()
