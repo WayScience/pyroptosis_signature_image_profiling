@@ -1,0 +1,385 @@
+well,wellName,row,col,alias,treatment,dose
+A01,A1,1,1,1,LPS,10µg/ml
+B01,B1,2,1,2,LPS,1µg/ml
+C01,C1,3,1,3,H2O2,500µM
+D01,D1,4,1,4,H2O2,50µM
+E01,E1,5,1,5,ATP,1mM
+F01,F1,6,1,6,ATP,0.1mM
+G01,G1,7,1,7,Flagellin,1µg/ml
+H01,H1,8,1,8,Flagellin,0.1µg/ml
+I01,I1,9,1,1,LPS,10µg/ml
+J01,J1,10,1,2,LPS,1µg/ml
+K01,K1,11,1,3,H2O2,500µM
+L01,L1,12,1,4,H2O2,50µM
+M01,M1,13,1,5,ATP,1mM
+N01,N1,14,1,6,ATP,0.1mM
+O01,O1,15,1,7,Flagellin,1µg/ml
+P01,P1,16,1,8,Flagellin,0.1µg/ml
+A02,A2,1,2,1,LPS,10µg/ml
+B02,B2,2,2,2,LPS,1µg/ml
+C02,C2,3,2,3,H2O2,500µM
+D02,D2,4,2,4,H2O2,50µM
+E02,E2,5,2,5,ATP,1mM
+F02,F2,6,2,6,ATP,0.1mM
+G02,G2,7,2,7,Flagellin,1µg/ml
+H02,H2,8,2,8,Flagellin,0.1µg/ml
+I02,I2,9,2,1,LPS,10µg/ml
+J02,J2,10,2,2,LPS,1µg/ml
+K02,K2,11,2,3,H2O2,500µM
+L02,L2,12,2,4,H2O2,50µM
+M02,M2,13,2,5,ATP,1mM
+N02,N2,14,2,6,ATP,0.1mM
+O02,O2,15,2,7,Flagellin,1µg/ml
+P02,P2,16,2,8,Flagellin,0.1µg/ml
+A03,A3,1,3,1,LPS,10µg/ml
+B03,B3,2,3,2,LPS,1µg/ml
+C03,C3,3,3,3,H2O2,500µM
+D03,D3,4,3,4,H2O2,50µM
+E03,E3,5,3,5,ATP,1mM
+F03,F3,6,3,6,ATP,0.1mM
+G03,G3,7,3,7,Flagellin,1µg/ml
+H03,H3,8,3,8,Flagellin,0.1µg/ml
+I03,I3,9,3,1,LPS,10µg/ml
+J03,J3,10,3,2,LPS,1µg/ml
+K03,K3,11,3,3,H2O2,500µM
+L03,L3,12,3,4,H2O2,50µM
+M03,M3,13,3,5,ATP,1mM
+N03,N3,14,3,6,ATP,0.1mM
+O03,O3,15,3,7,Flagellin,1µg/ml
+P03,P3,16,3,8,Flagellin,0.1µg/ml
+A04,A4,1,4,1,LPS,10µg/ml
+B04,B4,2,4,2,LPS,1µg/ml
+C04,C4,3,4,3,H2O2,500µM
+D04,D4,4,4,4,H2O2,50µM
+E04,E4,5,4,5,ATP,1mM
+F04,F4,6,4,6,ATP,0.1mM
+G04,G4,7,4,7,Flagellin,1µg/ml
+H04,H4,8,4,8,Flagellin,0.1µg/ml
+I04,I4,9,4,1,LPS,10µg/ml
+J04,J4,10,4,2,LPS,1µg/ml
+K04,K4,11,4,3,H2O2,500µM
+L04,L4,12,4,4,H2O2,50µM
+M04,M4,13,4,5,ATP,1mM
+N04,N4,14,4,6,ATP,0.1mM
+O04,O4,15,4,7,Flagellin,1µg/ml
+P04,P4,16,4,8,Flagellin,0.1µg/ml
+A05,A5,1,5,1,LPS,10µg/ml
+B05,B5,2,5,2,LPS,1µg/ml
+C05,C5,3,5,3,H2O2,500µM
+D05,D5,4,5,4,H2O2,50µM
+E05,E5,5,5,5,ATP,1mM
+F05,F5,6,5,6,ATP,0.1mM
+G05,G5,7,5,7,Flagellin,1µg/ml
+H05,H5,8,5,8,Flagellin,0.1µg/ml
+I05,I5,9,5,1,LPS,10µg/ml
+J05,J5,10,5,2,LPS,1µg/ml
+K05,K5,11,5,3,H2O2,500µM
+L05,L5,12,5,4,H2O2,50µM
+M05,M5,13,5,5,ATP,1mM
+N05,N5,14,5,6,ATP,0.1mM
+O05,O5,15,5,7,Flagellin,1µg/ml
+P05,P5,16,5,8,Flagellin,0.1µg/ml
+A06,A6,1,6,1,LPS,10µg/ml
+B06,B6,2,6,2,LPS,1µg/ml
+C06,C6,3,6,3,H2O2,500µM
+D06,D6,4,6,4,H2O2,50µM
+E06,E6,5,6,5,ATP,1mM
+F06,F6,6,6,6,ATP,0.1mM
+G06,G6,7,6,7,Flagellin,1µg/ml
+H06,H6,8,6,8,Flagellin,0.1µg/ml
+I06,I6,9,6,1,LPS,10µg/ml
+J06,J6,10,6,2,LPS,1µg/ml
+K06,K6,11,6,3,H2O2,500µM
+L06,L6,12,6,4,H2O2,50µM
+M06,M6,13,6,5,ATP,1mM
+N06,N6,14,6,6,ATP,0.1mM
+O06,O6,15,6,7,Flagellin,1µg/ml
+P06,P6,16,6,8,Flagellin,0.1µg/ml
+A07,A7,1,7,9,Disulfiram,2.5µM
+B07,B7,2,7,10,Disulfiram,0.1µM
+C07,C7,3,7,11,Thapsi,10µM
+D07,D7,4,7,12,Thapsi,1µM
+E07,E7,5,7,13,LPS + Nigericin,1µg/ml + 10µM
+F07,F7,6,7,14,LPS + Nigericin,1µg/ml + 1µM
+G07,G7,7,7,15,DMSO 0.1%,0
+H07,H7,8,7,16,Media only,0
+I07,I7,9,7,9,Disulfiram,2.5µM
+J07,J7,10,7,10,Disulfiram,0.1µM
+K07,K7,11,7,11,Thapsi,10µM
+L07,L7,12,7,12,Thapsi,1µM
+M07,M7,13,7,13,LPS + Nigericin,1µg/ml + 10µM
+N07,N7,14,7,14,LPS + Nigericin,1µg/ml + 1µM
+O07,O7,15,7,15,DMSO 0.1%,0
+P07,P7,16,7,16,Media only,0
+A08,A8,1,8,9,Disulfiram,2.5µM
+B08,B8,2,8,10,Disulfiram,0.1µM
+C08,C8,3,8,11,Thapsi,10µM
+D08,D8,4,8,12,Thapsi,1µM
+E08,E8,5,8,13,LPS + Nigericin,1µg/ml + 10µM
+F08,F8,6,8,14,LPS + Nigericin,1µg/ml + 1µM
+G08,G8,7,8,15,DMSO 0.1%,0
+H08,H8,8,8,16,Media only,0
+I08,I8,9,8,9,Disulfiram,2.5µM
+J08,J8,10,8,10,Disulfiram,0.1µM
+K08,K8,11,8,11,Thapsi,10µM
+L08,L8,12,8,12,Thapsi,1µM
+M08,M8,13,8,13,LPS + Nigericin,1µg/ml + 10µM
+N08,N8,14,8,14,LPS + Nigericin,1µg/ml + 1µM
+O08,O8,15,8,15,DMSO 0.1%,0
+P08,P8,16,8,16,Media only,0
+A09,A9,1,9,9,Disulfiram,2.5µM
+B09,B9,2,9,10,Disulfiram,0.1µM
+C09,C9,3,9,11,Thapsi,10µM
+D09,D9,4,9,12,Thapsi,1µM
+E09,E9,5,9,13,LPS + Nigericin,1µg/ml + 10µM
+F09,F9,6,9,14,LPS + Nigericin,1µg/ml + 1µM
+G09,G9,7,9,15,DMSO 0.1%,0
+H09,H9,8,9,16,Media only,0
+I09,I9,9,9,9,Disulfiram,2.5µM
+J09,J9,10,9,10,Disulfiram,0.1µM
+K09,K9,11,9,11,Thapsi,10µM
+L09,L9,12,9,12,Thapsi,1µM
+M09,M9,13,9,13,LPS + Nigericin,1µg/ml + 10µM
+N09,N9,14,9,14,LPS + Nigericin,1µg/ml + 1µM
+O09,O9,15,9,15,DMSO 0.1%,0
+P09,P9,16,9,16,Media only,0
+A10,A10,1,10,9,Disulfiram,2.5µM
+B10,B10,2,10,10,Disulfiram,0.1µM
+C10,C10,3,10,11,Thapsi,10µM
+D10,D10,4,10,12,Thapsi,1µM
+E10,E10,5,10,13,LPS + Nigericin,1µg/ml + 10µM
+F10,F10,6,10,14,LPS + Nigericin,1µg/ml + 1µM
+G10,G10,7,10,15,DMSO 0.1%,0
+H10,H10,8,10,16,Media only,0
+I10,I10,9,10,9,Disulfiram,2.5µM
+J10,J10,10,10,10,Disulfiram,0.1µM
+K10,K10,11,10,11,Thapsi,10µM
+L10,L10,12,10,12,Thapsi,1µM
+M10,M10,13,10,13,LPS + Nigericin,1µg/ml + 10µM
+N10,N10,14,10,14,LPS + Nigericin,1µg/ml + 1µM
+O10,O10,15,10,15,DMSO 0.1%,0
+P10,P10,16,10,16,Media only,0
+A11,A11,1,11,9,Disulfiram,2.5µM
+B11,B11,2,11,10,Disulfiram,0.1µM
+C11,C11,3,11,11,Thapsi,10µM
+D11,D11,4,11,12,Thapsi,1µM
+E11,E11,5,11,13,LPS + Nigericin,1µg/ml + 10µM
+F11,F11,6,11,14,LPS + Nigericin,1µg/ml + 1µM
+G11,G11,7,11,15,DMSO 0.1%,0
+H11,H11,8,11,16,Media only,0
+I11,I11,9,11,9,Disulfiram,2.5µM
+J11,J11,10,11,10,Disulfiram,0.1µM
+K11,K11,11,11,11,Thapsi,10µM
+L11,L11,12,11,12,Thapsi,1µM
+M11,M11,13,11,13,LPS + Nigericin,1µg/ml + 10µM
+N11,N11,14,11,14,LPS + Nigericin,1µg/ml + 1µM
+O11,O11,15,11,15,DMSO 0.1%,0
+P11,P11,16,11,16,Media only,0
+A12,A12,1,12,9,Disulfiram,2.5µM
+B12,B12,2,12,10,Disulfiram,0.1µM
+C12,C12,3,12,11,Thapsi,10µM
+D12,D12,4,12,12,Thapsi,1µM
+E12,E12,5,12,13,LPS + Nigericin,1µg/ml + 10µM
+F12,F12,6,12,14,LPS + Nigericin,1µg/ml + 1µM
+G12,G12,7,12,15,DMSO 0.1%,0
+H12,H12,8,12,16,Media only,0
+I12,I12,9,12,9,Disulfiram,2.5µM
+J12,J12,10,12,10,Disulfiram,0.1µM
+K12,K12,11,12,11,Thapsi,10µM
+L12,L12,12,12,12,Thapsi,1µM
+M12,M12,13,12,13,LPS + Nigericin,1µg/ml + 10µM
+N12,N12,14,12,14,LPS + Nigericin,1µg/ml + 1µM
+O12,O12,15,12,15,DMSO 0.1%,0
+P12,P12,16,12,16,Media only,0
+A13,A13,1,13,1,LPS,10µg/ml
+B13,B13,2,13,9,Disulfiram,2.5µM
+C13,C13,3,13,2,LPS,1µg/ml
+D13,D13,4,13,10,Disulfiram,0.1µM
+E13,E13,5,13,3,H2O2,500µM
+F13,F13,6,13,11,Thapsi,10µM
+G13,G13,7,13,4,H2O2,50µM
+H13,H13,8,13,12,Thapsi,1µM
+I13,I13,9,13,5,ATP,1mM
+J13,J13,10,13,13,LPS + Nigericin,1µg/ml + 10µM
+K13,K13,11,13,6,ATP,0.1mM
+L13,L13,12,13,14,LPS + Nigericin,1µg/ml + 1µM
+M13,M13,13,13,7,Flagellin,1µg/ml
+N13,N13,14,13,15,DMSO 0.1%,0
+O13,O13,15,13,8,Flagellin,0.1µg/ml
+P13,P13,16,13,16,Media only,0
+A14,A14,1,14,7,Flagellin,1µg/ml
+B14,B14,2,14,15,DMSO 0.1%,0
+C14,C14,3,14,8,Flagellin,0.1µg/ml
+D14,D14,4,14,16,Media only,0
+E14,E14,5,14,1,LPS,10µg/ml
+F14,F14,6,14,9,Disulfiram,2.5µM
+G14,G14,7,14,2,LPS,1µg/ml
+H14,H14,8,14,10,Disulfiram,0.1µM
+I14,I14,9,14,3,H2O2,500µM
+J14,J14,10,14,11,Thapsi,10µM
+K14,K14,11,14,4,H2O2,50µM
+L14,L14,12,14,12,Thapsi,1µM
+M14,M14,13,14,5,ATP,1mM
+N14,N14,14,14,13,LPS + Nigericin,1µg/ml + 10µM
+O14,O14,15,14,6,ATP,0.1mM
+P14,P14,16,14,14,LPS + Nigericin,1µg/ml + 1µM
+A15,A15,1,15,8,Flagellin,0.1µg/ml
+B15,B15,2,15,16,Media only,0
+C15,C15,3,15,7,Flagellin,1µg/ml
+D15,D15,4,15,15,DMSO 0.1%,0
+E15,E15,5,15,6,ATP,0.1mM
+F15,F15,6,15,14,LPS + Nigericin,1µg/ml + 1µM
+G15,G15,7,15,5,ATP,1mM
+H15,H15,8,15,13,LPS + Nigericin,1µg/ml + 10µM
+I15,I15,9,15,4,H2O2,50µM
+J15,J15,10,15,12,Thapsi,1µM
+K15,K15,11,15,3,H2O2,500µM
+L15,L15,12,15,11,Thapsi,10µM
+M15,M15,13,15,2,LPS,1µg/ml
+N15,N15,14,15,10,Disulfiram,0.1µM
+O15,O15,15,15,1,LPS,10µg/ml
+P15,P15,16,15,9,Disulfiram,2.5µM
+A16,A16,1,16,14,LPS + Nigericin,1µg/ml + 1µM
+B16,B16,2,16,6,ATP,0.1mM
+C16,C16,3,16,13,LPS + Nigericin,1µg/ml + 10µM
+D16,D16,4,16,5,ATP,1mM
+E16,E16,5,16,12,Thapsi,1µM
+F16,F16,6,16,4,H2O2,50µM
+G16,G16,7,16,11,Thapsi,10µM
+H16,H16,8,16,3,H2O2,500µM
+I16,I16,9,16,10,Disulfiram,0.1µM
+J16,J16,10,16,2,LPS,1µg/ml
+K16,K16,11,16,9,Disulfiram,2.5µM
+L16,L16,12,16,1,LPS,10µg/ml
+M16,M16,13,16,16,Media only,0
+N16,N16,14,16,8,Flagellin,0.1µg/ml
+O16,O16,15,16,15,DMSO 0.1%,0
+P16,P16,16,16,7,Flagellin,1µg/ml
+A17,A17,1,17,8,Flagellin,0.1µg/ml
+B17,B17,2,17,7,Flagellin,1µg/ml
+C17,C17,3,17,6,ATP,0.1mM
+D17,D17,4,17,5,ATP,1mM
+E17,E17,5,17,4,H2O2,50µM
+F17,F17,6,17,3,H2O2,500µM
+G17,G17,7,17,2,LPS,1µg/ml
+H17,H17,8,17,1,LPS,10µg/ml
+I17,I17,9,17,16,Media only,0
+J17,J17,10,17,15,DMSO 0.1%,0
+K17,K17,11,17,14,LPS + Nigericin,1µg/ml + 1µM
+L17,L17,12,17,13,LPS + Nigericin,1µg/ml + 10µM
+M17,M17,13,17,12,Thapsi,1µM
+N17,N17,14,17,11,Thapsi,10µM
+O17,O17,15,17,10,Disulfiram,0.1µM
+P17,P17,16,17,9,Disulfiram,2.5µM
+A18,A18,1,18,16,Media only,0
+B18,B18,2,18,15,DMSO 0.1%,0
+C18,C18,3,18,14,LPS + Nigericin,1µg/ml + 1µM
+D18,D18,4,18,13,LPS + Nigericin,1µg/ml + 10µM
+E18,E18,5,18,12,Thapsi,1µM
+F18,F18,6,18,11,Thapsi,10µM
+G18,G18,7,18,10,Disulfiram,0.1µM
+H18,H18,8,18,9,Disulfiram,2.5µM
+I18,I18,9,18,8,Flagellin,0.1µg/ml
+J18,J18,10,18,7,Flagellin,1µg/ml
+K18,K18,11,18,6,ATP,0.1mM
+L18,L18,12,18,5,ATP,1mM
+M18,M18,13,18,4,H2O2,50µM
+N18,N18,14,18,3,H2O2,500µM
+O18,O18,15,18,2,LPS,1µg/ml
+P18,P18,16,18,1,LPS,10µg/ml
+A19,A19,1,19,1,LPS,10µg/ml
+B19,B19,2,19,9,Disulfiram,2.5µM
+C19,C19,3,19,2,LPS,1µg/ml
+D19,D19,4,19,10,Disulfiram,0.1µM
+E19,E19,5,19,3,H2O2,500µM
+F19,F19,6,19,11,Thapsi,10µM
+G19,G19,7,19,4,H2O2,50µM
+H19,H19,8,19,12,Thapsi,1µM
+I19,I19,9,19,5,ATP,1mM
+J19,J19,10,19,13,LPS + Nigericin,1µg/ml + 10µM
+K19,K19,11,19,6,ATP,0.1mM
+L19,L19,12,19,14,LPS + Nigericin,1µg/ml + 1µM
+M19,M19,13,19,7,Flagellin,1µg/ml
+N19,N19,14,19,15,DMSO 0.1%,0
+O19,O19,15,19,8,Flagellin,0.1µg/ml
+P19,P19,16,19,16,Media only,0
+A20,A20,1,20,7,Flagellin,1µg/ml
+B20,B20,2,20,15,DMSO 0.1%,0
+C20,C20,3,20,8,Flagellin,0.1µg/ml
+D20,D20,4,20,16,Media only,0
+E20,E20,5,20,1,LPS,10µg/ml
+F20,F20,6,20,9,Disulfiram,2.5µM
+G20,G20,7,20,2,LPS,1µg/ml
+H20,H20,8,20,10,Disulfiram,0.1µM
+I20,I20,9,20,3,H2O2,500µM
+J20,J20,10,20,11,Thapsi,10µM
+K20,K20,11,20,4,H2O2,50µM
+L20,L20,12,20,12,Thapsi,1µM
+M20,M20,13,20,5,ATP,1mM
+N20,N20,14,20,13,LPS + Nigericin,1µg/ml + 10µM
+O20,O20,15,20,6,ATP,0.1mM
+P20,P20,16,20,14,LPS + Nigericin,1µg/ml + 1µM
+A21,A21,1,21,8,Flagellin,0.1µg/ml
+B21,B21,2,21,16,Media only,0
+C21,C21,3,21,7,Flagellin,1µg/ml
+D21,D21,4,21,15,DMSO 0.1%,0
+E21,E21,5,21,6,ATP,0.1mM
+F21,F21,6,21,14,LPS + Nigericin,1µg/ml + 1µM
+G21,G21,7,21,5,ATP,1mM
+H21,H21,8,21,13,LPS + Nigericin,1µg/ml + 10µM
+I21,I21,9,21,4,H2O2,50µM
+J21,J21,10,21,12,Thapsi,1µM
+K21,K21,11,21,3,H2O2,500µM
+L21,L21,12,21,11,Thapsi,10µM
+M21,M21,13,21,2,LPS,1µg/ml
+N21,N21,14,21,10,Disulfiram,0.1µM
+O21,O21,15,21,1,LPS,10µg/ml
+P21,P21,16,21,9,Disulfiram,2.5µM
+A22,A22,1,22,14,LPS + Nigericin,1µg/ml + 1µM
+B22,B22,2,22,6,ATP,0.1mM
+C22,C22,3,22,13,LPS + Nigericin,1µg/ml + 10µM
+D22,D22,4,22,5,ATP,1mM
+E22,E22,5,22,12,Thapsi,1µM
+F22,F22,6,22,4,H2O2,50µM
+G22,G22,7,22,11,Thapsi,10µM
+H22,H22,8,22,3,H2O2,500µM
+I22,I22,9,22,10,Disulfiram,0.1µM
+J22,J22,10,22,2,LPS,1µg/ml
+K22,K22,11,22,9,Disulfiram,2.5µM
+L22,L22,12,22,1,LPS,10µg/ml
+M22,M22,13,22,16,Media only,0
+N22,N22,14,22,8,Flagellin,0.1µg/ml
+O22,O22,15,22,15,DMSO 0.1%,0
+P22,P22,16,22,7,Flagellin,1µg/ml
+A23,A23,1,23,8,Flagellin,0.1µg/ml
+B23,B23,2,23,7,Flagellin,1µg/ml
+C23,C23,3,23,6,ATP,0.1mM
+D23,D23,4,23,5,ATP,1mM
+E23,E23,5,23,4,H2O2,50µM
+F23,F23,6,23,3,H2O2,500µM
+G23,G23,7,23,2,LPS,1µg/ml
+H23,H23,8,23,1,LPS,10µg/ml
+I23,I23,9,23,16,Media only,0
+J23,J23,10,23,15,DMSO 0.1%,0
+K23,K23,11,23,14,LPS + Nigericin,1µg/ml + 1µM
+L23,L23,12,23,13,LPS + Nigericin,1µg/ml + 10µM
+M23,M23,13,23,12,Thapsi,1µM
+N23,N23,14,23,11,Thapsi,10µM
+O23,O23,15,23,10,Disulfiram,0.1µM
+P23,P23,16,23,9,Disulfiram,2.5µM
+A24,A24,1,24,16,Media only,0
+B24,B24,2,24,15,DMSO 0.1%,0
+C24,C24,3,24,14,LPS + Nigericin,1µg/ml + 1µM
+D24,D24,4,24,13,LPS + Nigericin,1µg/ml + 10µM
+E24,E24,5,24,12,Thapsi,1µM
+F24,F24,6,24,11,Thapsi,10µM
+G24,G24,7,24,10,Disulfiram,0.1µM
+H24,H24,8,24,9,Disulfiram,2.5µM
+I24,I24,9,24,8,Flagellin,0.1µg/ml
+J24,J24,10,24,7,Flagellin,1µg/ml
+K24,K24,11,24,6,ATP,0.1mM
+L24,L24,12,24,5,ATP,1mM
+M24,M24,13,24,4,H2O2,50µM
+N24,N24,14,24,3,H2O2,500µM
+O24,O24,15,24,2,LPS,1µg/ml
+P24,P24,16,24,1,LPS,10µg/ml
