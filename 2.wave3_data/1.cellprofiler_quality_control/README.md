@@ -1,6 +1,8 @@
 # Create LoadData csvs to create maximum projection images
 
-In this module, we create two LoadData csv and CellProfiler pipelines for performing maximum projection on the images and saving them (the images will be named p03 where 3 is the last z-plane).
+In this module, we create two LoadData csv and CellProfiler pipelines for performing maximum projection on the images and saving them.
+This pipeline names the max projected images as the last z-plane.
+In our case we have 3 z-planes (p01-p03) so our images contain the last z-plane p03.
 
 ## pe2loaddata
 
@@ -32,3 +34,9 @@ Run this code in terminal to create the csv file:
 ```sh
 bash create_loaddata_illum_csv.sh
 ```
+
+## Step 4: Create the maximum projection images for each channel and site in CellProfiler
+
+To create the maximum projection images for each channel and site, run the [zproj.cppipe](zproj.cppipe) pipeline in the CellProfiler GUI.
+
+To run this pipeline, it took approximately 30 minutes.
