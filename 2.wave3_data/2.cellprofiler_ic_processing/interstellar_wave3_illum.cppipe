@@ -2,7 +2,7 @@ CellProfiler Pipeline: http://www.cellprofiler.org
 Version:5
 DateRevision:424
 GitHash:
-ModuleCount:11
+ModuleCount:13
 HasImagePlaneDetails:False
 
 LoadData:[module_num:1|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
@@ -176,7 +176,7 @@ SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:16|show_
     Append a suffix to the image file name?:Yes
     Text to append to the image name:IllumDNA
     Saved file format:npy
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/1.wave2_data/1.cellprofiler_ic_processing/illum_directory
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/2.cellprofiler_ic_processing/illum_directory
     Image bit depth:8-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -188,15 +188,15 @@ SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:16|show_
 
 SaveImages:[module_num:9|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Image
-    Select the image to save:IllumASC_Nothing
+    Select the image to save:IllumER
     Select method for constructing file names:Single name
     Select image name for file prefix:None
-    Enter single file name:\g<Plate>_IllumASC_Nothing
+    Enter single file name:\g<Plate>_IllumER
     Number of digits:4
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:npy
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/1.wave2_data/1.cellprofiler_ic_processing/illum_directory
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/2.cellprofiler_ic_processing/illum_directory
     Image bit depth:8-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -208,15 +208,15 @@ SaveImages:[module_num:9|svn_version:'Unknown'|variable_revision_number:16|show_
 
 SaveImages:[module_num:10|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Image
-    Select the image to save:IllumMito
+    Select the image to save:IllumPM
     Select method for constructing file names:Single name
     Select image name for file prefix:None
-    Enter single file name:\g<Plate>_IllumMito
+    Enter single file name:\g<Plate>_IllumPM
     Number of digits:4
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:npy
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/1.wave2_data/1.cellprofiler_ic_processing/illum_directory
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/2.cellprofiler_ic_processing/illum_directory
     Image bit depth:8-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -228,15 +228,55 @@ SaveImages:[module_num:10|svn_version:'Unknown'|variable_revision_number:16|show
 
 SaveImages:[module_num:11|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Image
-    Select the image to save:IllumASC_Spillover
+    Select the image to save:IllumRNA
     Select method for constructing file names:Single name
     Select image name for file prefix:None
-    Enter single file name:\g<Plate>_IllumASC_Spillover
+    Enter single file name:\g<Plate>_IllumRNA
     Number of digits:4
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:npy
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/1.wave2_data/1.cellprofiler_ic_processing/illum_directory
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/2.cellprofiler_ic_processing/illum_directory
+    Image bit depth:8-bit integer
+    Overwrite existing files without warning?:No
+    When to save:Last cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+    Save with lossless compression?:Yes
+
+SaveImages:[module_num:12|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:IllumMito
+    Select method for constructing file names:Single name
+    Select image name for file prefix:None
+    Enter single file name:\g<Plate>_IllumMito
+    Number of digits:4
+    Append a suffix to the image file name?:No
+    Text to append to the image name:
+    Saved file format:npy
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/2.cellprofiler_ic_processing/illum_directory
+    Image bit depth:8-bit integer
+    Overwrite existing files without warning?:No
+    When to save:Last cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+    Save with lossless compression?:Yes
+
+SaveImages:[module_num:13|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:IllumGasdermin
+    Select method for constructing file names:Single name
+    Select image name for file prefix:None
+    Enter single file name:\g<Plate>_IllumGasdermin
+    Number of digits:4
+    Append a suffix to the image file name?:No
+    Text to append to the image name:
+    Saved file format:npy
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/2.cellprofiler_ic_processing/illum_directory
     Image bit depth:8-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
