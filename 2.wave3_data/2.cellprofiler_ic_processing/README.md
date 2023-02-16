@@ -1,7 +1,10 @@
 # Create and edit LoadData csv and calculate illumination correction function
 
-In this module, we created a LoadData csv, edited to remove uncessary rows and corrected paths to maximum projection images, and ran a CellProfiler pipeline for calculating an illumination correction (IC) function for all images in each channel. 
+In this module, we created a LoadData csv, edited to remove rows that are not the last z-plane and corrected paths to maximum projection images (as they have the same name as the last z-plane), and ran a CellProfiler pipeline for calculating an illumination correction (IC) function for all images in each channel. 
 An IC function (`.npy` file) per channel is created based on all images in a channel.
+
+This methodology is inspired by [a project from the Broad Institute](https://github.com/broadinstitute/imaging-platform-pipelines/tree/455d8ffa2a0a6cb7341868139f3f1719b9d5ea2c/cellpainting_ipsc_20x_phenix_with_bf_bin1_cp4).
+We discussed the process with Erin Weisbart in [an image.sc post](https://forum.image.sc/t/performing-max-projection-using-phenix-data-based-on-broad-institute-project/77262).
 
 ## pe2loaddata
 
