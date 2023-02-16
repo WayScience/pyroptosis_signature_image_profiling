@@ -32,7 +32,7 @@ SaveImages:[module_num:3|svn_version:'Unknown'|variable_revision_number:16|show_
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:tiff
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/1.cellprofiler_quality_control/Maximum_Images
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/0.download_data/70117_20230118MM1_CellPainting_A700_20X_V1__2023-02-06T09_42_13-Measurement1/Maximum_Images
     Image bit depth:16-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -58,7 +58,7 @@ SaveImages:[module_num:5|svn_version:'Unknown'|variable_revision_number:16|show_
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:tiff
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/1.cellprofiler_quality_control/Maximum_Images
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/0.download_data/70117_20230118MM1_CellPainting_A700_20X_V1__2023-02-06T09_42_13-Measurement1/Maximum_Images
     Image bit depth:16-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -84,7 +84,7 @@ SaveImages:[module_num:7|svn_version:'Unknown'|variable_revision_number:16|show_
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:tiff
-    Output file location:Default Output Folder sub-folder|Interstellar_Project/2.wave3_data/1.cellprofiler_quality_control/Maximum_Images
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/0.download_data/70117_20230118MM1_CellPainting_A700_20X_V1__2023-02-06T09_42_13-Measurement1/Maximum_Images
     Image bit depth:16-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -110,7 +110,7 @@ SaveImages:[module_num:9|svn_version:'Unknown'|variable_revision_number:16|show_
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:tiff
-    Output file location:Default Output Folder sub-folder|Interstellar_Project/2.wave3_data/1.cellprofiler_quality_control/Maximum_Images
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/0.download_data/70117_20230118MM1_CellPainting_A700_20X_V1__2023-02-06T09_42_13-Measurement1/Maximum_Images
     Image bit depth:16-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -136,7 +136,7 @@ SaveImages:[module_num:11|svn_version:'Unknown'|variable_revision_number:16|show
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:tiff
-    Output file location:Default Output Folder sub-folder|Interstellar_Project/2.wave3_data/1.cellprofiler_quality_control/Maximum_Images
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/0.download_data/70117_20230118MM1_CellPainting_A700_20X_V1__2023-02-06T09_42_13-Measurement1/Maximum_Images
     Image bit depth:16-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -162,7 +162,7 @@ SaveImages:[module_num:13|svn_version:'Unknown'|variable_revision_number:16|show
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:tiff
-    Output file location:Default Output Folder sub-folder|Interstellar_Project/2.wave3_data/1.cellprofiler_quality_control/Maximum_Images
+    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/0.download_data/70117_20230118MM1_CellPainting_A700_20X_V1__2023-02-06T09_42_13-Measurement1/Maximum_Images
     Image bit depth:16-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
