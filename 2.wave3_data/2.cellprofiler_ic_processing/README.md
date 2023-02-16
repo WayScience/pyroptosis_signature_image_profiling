@@ -1,6 +1,7 @@
 # Create and edit LoadData csv and calculate illumination correction function
 
-In this module, we created a LoadData csv, edited to remove uncessary rows and corrected paths to maximum projection images, and ran a CellProfiler pipeline for calculating an illumination correction (IC) function for each channel.
+In this module, we created a LoadData csv, edited to remove uncessary rows and corrected paths to maximum projection images, and ran a CellProfiler pipeline for calculating an illumination correction (IC) function for all images in each channel. 
+An IC function (`.npy` file) per channel is created based on all images in a channel.
 
 ## pe2loaddata
 
@@ -17,7 +18,7 @@ We are using CellProfiler v4.2.4 for all pipelines.
 
 If you have not already installed `pe2loaddata`, use follow the instructions from [the README from wave1 data](../../0.wave1_data/1.cellprofiler_ic_processing/README.md) to create the pe2loaddata environment.
 
-## Step 3: Create LoadData csv
+## Step 3: Create and correct LoadData csv
 
 To create the LoadData csv for CellProfiler, the format to is as follows:
 
@@ -25,19 +26,18 @@ To create the LoadData csv for CellProfiler, the format to is as follows:
 pe2loaddata --index-directory <index-directory> config.yml output.csv
 ```
 
-To create the LoadData csv, make sure to change the paths within the [create_loaddata_csv.ipynb](create_loaddata_csv.ipynb) to reflect your local machine paths before running the code below (e.g. a local path for my computer starts with `/home/jenna`).
+To create the LoadData csv, make sure to change the paths within the [create_edit_loaddata_csv.ipynb](create_edit_loaddata_csv.ipynb) to reflect your local machine paths before running the code below (e.g. a local path for my computer starts with `/home/jenna`).
+
+To be able to load in the correct images for the IC pipeline, the csv is corrected to remove rows that aren't the last z-plane (see documentation from previous module for reasoning) and the pathing is updated to where the maximum projection images are located.
 
 Run this code in terminal to create the csv file:
 
 ```sh
 bash create_loaddata_illum_csv.sh
 ```
-## Step 4: Correct the LoadData csv
 
-To be able to load in the correct images for the IC pipeline, the csv must be corrected to remove rows that aren't the last z-plane (see documentation from previous module for reasoning) and to correct the pathing to where the maximum projection images are located.
+## Step 4: Calculate IC function for each channel in CellProfiler
 
-## Step 5: Calculate IC function for each channel in CellProfiler
+To calculate the illumination correction function for both channels in the data, run the [interstellar_wave3_illum.cppipe](interstellar_wave2_illum.cppipe) pipeline in the CellProfiler GUI to output the two functions (`.npy` files) to use in the analysis pipeline.
 
-To calculate the illumination correction function for both channels in the data, run the [interstellar_wave2_illum.cppipe](interstellar_wave2_illum.cppipe) pipeline in the CellProfiler GUI to output the two functions (`.npy` files) to use in the analysis pipeline.
-
-To run this pipeline and calculate the IC function for 4 channels (1152 image sets), it took approximately 20 minutes.
+To run this pipeline and calculate the IC function for 6 channels (960 image sets), it took approximately 35 minutes.

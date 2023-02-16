@@ -1,8 +1,10 @@
 """
-This file contains functions to create different LoadData csvs for specific CellProfiler pipelines.
+This file contains functions to create different LoadData csvs for specific CellProfiler pipelines
+and to edit these outputted csvs.
 """
 import os
 import pathlib
+import pandas as pd
 
 def create_loaddata_csv(
     index_directory: pathlib.Path,
@@ -54,3 +56,27 @@ def create_loaddata_illum_csv(
     command = f"pe2loaddata --index-directory {index_directory} {config_path} {path_to_output} --illum --illum-directory {illum_directory} --plate-id {plate_id} --illum-output {illum_output_path}"
     os.system(command)
     print(f'{illum_output_path.name} is created!')
+
+def edit_loaddata_csv(path_to_loaddata_csv:pathlib.Path):
+    """
+    This function loads in the loaddata csv and edit it to remove unnessecary rows and 
+    correct the paths to the maximum projection images.
+
+    Parameters
+    ----------
+    path_to_loaddata_csv : pathlib.Path
+        path to the loaddata csv to be edited
+    """
+    loaddata_df = pd.read_csv(path_to_loaddata_csv)
+
+    # finds the last z-plane value and assigns it as a variable 
+    # Metadata_PlaneID values are 1-3 which correlates to the file names p01-p03
+    final_z = max(loaddata_df["Metadata_PlaneID"].unique())
+
+    # create df with only the rows with the last z-plane ID and edit path to the maximum projected images
+    loaddata_df = loaddata_df.loc[loaddata_df["Metadata_PlaneID"] == final_z]
+    loaddata_df = loaddata_df.replace(regex=r"Images", value="Maximum_Images")
+
+    # save the loaddata csv back to the same path
+    loaddata_df.to_csv(path_to_loaddata_csv, index=False)
+    print(f"{path_to_loaddata_csv.name} has been corrected!")
