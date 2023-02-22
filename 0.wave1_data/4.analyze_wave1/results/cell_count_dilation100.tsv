@@ -1,0 +1,33 @@
+Metadata_treatment	Metadata_dose_recode	Metadata_Well	Metadata_cell_count	Metadata_replicate_id
+ATP	high	E03	2060	replicate_0
+ATP	high	E04	2101	replicate_1
+ATP	low	F03	2117	replicate_0
+ATP	low	F04	2381	replicate_1
+DMSO 0.1%	low	G09	2002	replicate_0
+DMSO 0.1%	low	G10	2216	replicate_1
+Disulfiram	high	A09	722	replicate_0
+Disulfiram	high	A10	852	replicate_1
+Disulfiram	low	B09	1932	replicate_0
+Disulfiram	low	B10	2087	replicate_1
+Flagellin	high	G03	1713	replicate_0
+Flagellin	high	G04	1931	replicate_1
+Flagellin	low	H03	1979	replicate_0
+Flagellin	low	H04	2087	replicate_1
+H2O2	high	C03	41	replicate_0
+H2O2	high	C04	3	replicate_1
+H2O2	low	D03	1686	replicate_0
+H2O2	low	D04	2350	replicate_1
+LPS	high	A03	1030	replicate_0
+LPS	high	A04	1736	replicate_1
+LPS	low	B03	1962	replicate_0
+LPS	low	B04	2021	replicate_1
+LPS + Nigericin	high	E09	772	replicate_0
+LPS + Nigericin	high	E10	1180	replicate_1
+LPS + Nigericin	low	F09	1860	replicate_0
+LPS + Nigericin	low	F10	2094	replicate_1
+Media only	low	H09	1788	replicate_0
+Media only	low	H10	2161	replicate_1
+Thapsi	high	C09	800	replicate_0
+Thapsi	high	C10	1122	replicate_1
+Thapsi	low	D09	2083	replicate_0
+Thapsi	low	D10	1991	replicate_1
