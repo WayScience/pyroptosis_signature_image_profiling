@@ -142,3 +142,4 @@ interstellar_wave3.sqlite
 # ignore large csv.gz for the Interstellar Wave 3 data
 interstellar_wave3_sc.csv.gz
 interstellar_wave3_sc_norm_cellprofiler.csv.gz
+interstellar_wave3_sc_norm_fs_cellprofiler.csv.gz
