@@ -22,7 +22,7 @@ We will be able to assess the best dilate value during further analysis.
 
 To create the LoadData csv to use in the analysis pipeline, `pe2loaddata` uses the following structure:
 
-```sh
+```bash
 pe2loaddata --index-directory <index-directory> path/to/config.yml path/to/output.csv --illum --illum-directory <illum-directory> --plate-id <plate-id> --illum-output output_with_illum.csv
 ```
 
@@ -30,7 +30,7 @@ To create the LoadData csv with illum, make sure to change the paths within the 
 
 Run this code in terminal to create the csv file:
 
-```sh
+```bash
 bash create_loaddata_illum_csv.sh
 ```
 

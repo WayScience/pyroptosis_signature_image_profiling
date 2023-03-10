@@ -5,13 +5,16 @@ In this module, we create a LoadData csv and CellProfiler pipeline for calculati
 ## pe2loaddata
 
 To create the LoadData csv file for CellProfiler, we use a software called [pe2loaddata](https://github.com/broadinstitute/pe2loaddata/tree/220ac512bfc0c2e582d379b19411c1585272aee3). 
-This will create a LoadData csv from the Phenix metadata XML file generated from data acquisition. 
+This will create a LoadData csv from the Phenix metadata XML file generated during data acquisition. 
+
+**NOTE:** For all steps below, make sure you are in the correct directory (e.g., `cd 0.wave1_data/1.cellprofiler_ic_processing/`)
 
 ## Step 1: Create CellProfiler environment
 
 If you do not already have CellProfiler installed in a conda environment, you can run the code below to create one.
 
-```sh
+```bash
+cd 0.wave1_data/1.cellprofiler_ic_processing/environments
 conda env create -f cellprofiler_environment.yml
 ```
 
@@ -21,7 +24,8 @@ We are using CellProfiler v4.2.4 for all pipelines.
 
 Using the code below, install `pe2loaddata` using the [pe2loaddata_env.yml](pe2loaddata_env.yml) file.
 
-```sh
+```bash
+cd 0.wave1_data/1.cellprofiler_ic_processing/environments
 conda env create -f pe2loaddata_env.yml
 ```
 
@@ -29,7 +33,7 @@ conda env create -f pe2loaddata_env.yml
 
 To create the LoadData csv for CellProfiler, the format to is as follows:
 
-```sh
+```bash
 pe2loaddata --index-directory <index-directory> config.yml output.csv
 ```
 
@@ -37,7 +41,7 @@ To create the LoadData csv, make sure to change the paths within the [create_loa
 
 Run this code in terminal to create the csv file:
 
-```sh
+```bash
 bash create_loaddata_wave1_csv.sh
 ```
 
