@@ -1,0 +1,28 @@
+name: interstellar_data
+
+channels:
+- conda-forge
+
+dependencies:
+- conda-forge::python=3.8
+- conda-forge::ipykernel
+- conda-forge::jupyter
+- conda-forge::nbconvert=6.4.4
+- conda-forge::nb_conda_kernels
+- conda-forge::pip
+- conda-forge::numpy
+- conda-forge::matplotlib
+- conda-forge::pandas
+- conda-forge::openjdk
+- conda-forge::scikit-learn
+- conda-forge::mahotas
+- conda-forge::gtk2
+# these are strict because that is how it is on the CellProfiler wiki
+- conda-forge::Jinja2=3.0.3
+- conda-forge::inflect=5.3.0
+- conda-forge::wxpython=4.1.0
+- conda-forge::sentry-sdk=0.18.0
+- conda-forge::mysqlclient=1.4.4
+- pip:
+    - cellprofiler==4.2.4
+    - git+https://github.com/broadinstitute/pe2loaddata.git@0426dd6b9d8b3242294a6fbdef7c4e1ee762a4cc

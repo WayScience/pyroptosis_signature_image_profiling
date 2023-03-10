@@ -26,3 +26,18 @@ Currently, there are three waves of data analyzed coming from one plate.
 
 ![platemap_plate1](figures/platemap_plate1.png)
 
+## Create conda environment for the whole repository
+
+All waves will be using the same conda environment to run notebooks/python files.
+
+To create the conda environment, run the code block below:
+
+```bash
+conda env create -f interstellar_data_env.yml
+```
+
+To activate the environment, run the code block below:
+
+```bash
+conda activate interstellar_data
+```
