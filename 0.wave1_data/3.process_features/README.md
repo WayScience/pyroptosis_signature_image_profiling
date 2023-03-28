@@ -8,18 +8,9 @@ We use [Pycytominer](https://github.com/cytomining/pycytominer) to perform the m
 
 For more information regarding the functions that we used, please see [the documentation](https://pycytominer.readthedocs.io/en/latest/pycytominer.cyto_utils.html#pycytominer.cyto_utils.cells.SingleCells.merge_single_cells) from the Pycytominer team.
 
-## Step 1: Create conda environment
+## Extract single cell features from each dilation pipeline
 
-Make sure you are in the `0.wave1_data/3.process_features` directory before performing the below command.
-
-```sh
-# Run this command in terminal to create the conda environment
-conda env create -f 3.process_features.yml
-```
-
-## Step 2: Extract single cell features from each dilation pipeline
-
-Run this code in terminal to extract single cells and create csv file:
+Run this code in terminal to extract single cells and create csv files:
 
 ```sh
 bash extract_sc_interstellar.sh
