@@ -6,16 +6,17 @@ import os
 import pathlib
 
 
-def rename_sqlite_file(sqlite_dir_path: pathlib.Path, name: str):
+def rename_sqlite_file(sqlite_dir_path: pathlib.Path, name: str, hardcode_sqlite_name: str):
     """Rename the .sqlite file to be {method}.sqlite as to differentiate between the files
 
     Args:
         sqlite_dir_path (pathlib.Path): path to CellProfiler_output directory
         name (str): new name for the SQLite file
+        hardcode_sqlite_name (str): hardcoded name of the returned SQLite file from CellProfiler to change
     """
     try:
         # CellProfiler requires a name to be set in to pipeline, so regardless of plate or method, all sqlite files name are hardcoded
-        sqlite_file_path = pathlib.Path(f"{sqlite_dir_path}/NF1_data.sqlite")
+        sqlite_file_path = pathlib.Path(f"{sqlite_dir_path}/{hardcode_sqlite_name}.sqlite")
 
         new_file_name = str(sqlite_file_path).replace(
             sqlite_file_path.name, f"{name}.sqlite"
@@ -27,7 +28,7 @@ def rename_sqlite_file(sqlite_dir_path: pathlib.Path, name: str):
 
     except FileNotFoundError as e:
         print(
-            f"The NF1_data.sqlite file is not found in directory. Either the pipeline wasn't ran properly or the file is already renamed.\n"
+            f"The {hardcode_sqlite_name}.sqlite file is not found in directory. Either the pipeline wasn't ran properly or the file is already renamed.\n"
             f"{e}"
         )
 
@@ -37,6 +38,7 @@ def run_cellprofiler(
     path_to_output: str,
     path_to_loaddata: str,
     sqlite_name: str = None,
+    hardcode_sqlite_name: str = None, 
     analysis_run: bool = False,
 ):
     """Run CellProfiler on data using LoadData CSV. It can be used for both a illumination correction pipeline and analysis pipeline.
@@ -66,4 +68,4 @@ def run_cellprofiler(
         os.system(command)
 
         # rename the outputted .sqlite file to the
-        rename_sqlite_file(sqlite_dir_path=pathlib.Path(path_to_output), name=sqlite_name)
+        rename_sqlite_file(sqlite_dir_path=pathlib.Path(path_to_output), name=sqlite_name, hardcode_sqlite_name=hardcode_sqlite_name)

@@ -18,6 +18,7 @@ dependencies:
 - conda-forge::mahotas
 - conda-forge::gtk2
 # these are strict because that is how it is on the CellProfiler wiki
+# had to move up version for Jinja2 to use jupyter nbconvert
 - conda-forge::Jinja2=3.0.3
 - conda-forge::inflect=5.3.0
 - conda-forge::wxpython=4.1.0
@@ -26,3 +27,5 @@ dependencies:
 - pip:
     - cellprofiler==4.2.4
     - git+https://github.com/broadinstitute/pe2loaddata.git@0426dd6b9d8b3242294a6fbdef7c4e1ee762a4cc
+    - git+https://github.com/cytomining/pycytominer@7e571322d211f66e716bf135c8b52898556fb960
+    

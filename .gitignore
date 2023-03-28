@@ -143,3 +143,6 @@ interstellar_wave3.sqlite
 interstellar_wave3_sc.csv.gz
 interstellar_wave3_sc_norm_cellprofiler.csv.gz
 interstellar_wave3_sc_norm_fs_cellprofiler.csv.gz
+
+# ignore logs 
+logs
