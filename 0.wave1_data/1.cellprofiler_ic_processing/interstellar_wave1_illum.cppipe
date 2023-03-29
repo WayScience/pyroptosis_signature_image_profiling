@@ -6,8 +6,8 @@ ModuleCount:5
 HasImagePlaneDetails:False
 
 LoadData:[module_num:1|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
-    Input data file location:Default Input Folder sub-folder|Interstellar_Project/0.wave1_data/1.cellprofiler_ic_processing
-    Name of the file:wave1.csv
+    Input data file location:Default Input Folder|pyroptosis_signature/0.wave1_data/1.cellprofiler_ic_processing
+    Name of the file:wave1_loaddata.csv
     Load images based on this data?:Yes
     Base image location:Default Input Folder|
     Process just a range of rows?:No
@@ -76,7 +76,7 @@ SaveImages:[module_num:4|svn_version:'Unknown'|variable_revision_number:16|show_
     Append a suffix to the image file name?:Yes
     Text to append to the image name:IllumDNA
     Saved file format:npy
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/0.wave1_data/1.cellprofiler_ic_processing/illum_directory
+    Output file location:Default Output Folder|Interstellar_Project/0.wave1_data/1.cellprofiler_ic_processing/illum_directory
     Image bit depth:8-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle
@@ -96,7 +96,7 @@ SaveImages:[module_num:5|svn_version:'Unknown'|variable_revision_number:16|show_
     Append a suffix to the image file name?:No
     Text to append to the image name:
     Saved file format:npy
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/0.wave1_data/1.cellprofiler_ic_processing/illum_directory
+    Output file location:Default Output Folder|Interstellar_Project/0.wave1_data/1.cellprofiler_ic_processing/illum_directory
     Image bit depth:8-bit integer
     Overwrite existing files without warning?:No
     When to save:Last cycle

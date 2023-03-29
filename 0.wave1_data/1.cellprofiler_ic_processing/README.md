@@ -5,42 +5,16 @@ In this module, we create a LoadData csv and CellProfiler pipeline for calculati
 ## pe2loaddata
 
 To create the LoadData csv file for CellProfiler, we use a software called [pe2loaddata](https://github.com/broadinstitute/pe2loaddata/tree/220ac512bfc0c2e582d379b19411c1585272aee3). 
-This will create a LoadData csv from the Phenix metadata XML file generated from data acquisition. 
+This will create a LoadData csv from the Phenix metadata XML file generated during data acquisition. 
 
-## Step 1: Create CellProfiler environment
+Since we are using one main environment for the entire repository, there is no need to install pe2loaddata in separate environments for each module.
 
-If you do not already have CellProfiler installed in a conda environment, you can run the code below to create one.
+## Create LoadData csv and calculate IC function for each channel in CellProfiler
 
-```sh
-conda env create -f cellprofiler_environment.yml
+Run the below code in terminal to output the LoadData CSV file to use in the [interstellar_wave1_illum.cppipe](0.wave1_data/1.cellprofiler_ic_processing/interstellar_wave1_illum.cppipe) CellProfiler pipeline which outputs two functions (`.npy` files) to use in the downstream analysis pipeline.
+
+```bash
+cd 0.wave1_data/1.cellprofiler_ic_processing
+conda activate interstellar_data
+bash run_loaddata_and_ic.sh
 ```
-
-We are using CellProfiler v4.2.4 for all pipelines.
-
-## Step 2: Install pe2loaddata
-
-Using the code below, install `pe2loaddata` using the [pe2loaddata_env.yml](pe2loaddata_env.yml) file.
-
-```sh
-conda env create -f pe2loaddata_env.yml
-```
-
-## Step 3: Create LoadData csv
-
-To create the LoadData csv for CellProfiler, the format to is as follows:
-
-```sh
-pe2loaddata --index-directory <index-directory> config.yml output.csv
-```
-
-To create the LoadData csv, make sure to change the paths within the [create_loaddata_wave1_csv.ipynb](create_loaddata_wave1_csv.ipynb) to reflect your local machine paths before running the code below (e.g. a local path for my computer starts with `/home/jenna`).
-
-Run this code in terminal to create the csv file:
-
-```sh
-bash create_loaddata_wave1_csv.sh
-```
-
-## Step 4: Calculate IC function for each channel in CellProfiler
-
-To calculate the illumination correction function for both channels in the data, run the [interstellar_wave1_illum.cppipe](interstellar_wave1_illum.cppipe) pipeline in the CellProfiler GUI to output the two functions (`.npy` files) to use in the analysis pipeline.
