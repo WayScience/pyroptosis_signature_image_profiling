@@ -1,6 +1,6 @@
 # Perform CellProfiler analysis on Interstellar wave 1 data
 
-In this module, we create a LoadData csv with the illumination correction function to use in the [LoadData module in CellProfiler](https://cellprofiler-manual.s3.amazonaws.com/CPmanual/LoadData.html) and perform segmentation + feature extraction using CellProfiler.
+In this module, we create a LoadData csv with the illumination correction (IC) function to use in the [LoadData module in CellProfiler](https://cellprofiler-manual.s3.amazonaws.com/CPmanual/LoadData.html) and perform segmentation + feature extraction using CellProfiler.
 
 We run the [interstellar_wave1_analysis.cpproj](interstellar_wave1_analysis.cpproj) pipeline and output three sqlite files. 
 Each file corresponds to a dilation size (Figure 1):
@@ -19,11 +19,11 @@ We decided to test with various dilation values since we do not know how far Gas
 
 ## Create LoadData csv with IC functions and extract features with `loaddata_and_analysis.ipynb` notebook
 
-To create the sqlite files, we ran the pipeline in the CellProfiler GUI three independent times where each run had a different dilation size. 
+To create the sqlite files for each dilation, run the [loaddata_and_analysis.ipynb](0.wave1_data/2.cellprofiler_analysis/loaddata_and_analysis.ipynb) notebook.
 It took approximately an hour for the dilation 25 pipeline to run, 2 hours for 50 dilation, and 4 hours for 100 dilation.
 
-Run this code in terminal to create the csv file:
+Run this code in terminal to create the csv files:
 
 ```bash
-bash create_loaddata_illum_csv.sh
+bash loaddata_and_analysis.sh
 ```

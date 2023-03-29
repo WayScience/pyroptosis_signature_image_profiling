@@ -1,5 +1,5 @@
 """
-This collection of functions runs CellProfiler and will rename the .sqlite outputed to any specified name if running an analysis pipeline.
+This collection of functions runs CellProfiler and will rename the .sqlite outputted to any specified name if running an analysis pipeline.
 """
 
 import os
@@ -60,8 +60,7 @@ def run_cellprofiler(
             files.name.startswith(sqlite_name)
             for files in pathlib.Path(path_to_output).iterdir()
         ):
-            print("This plate has already been analyzed!")
-            return
+            raise NameError(f'The file {sqlite_name}.sqlite has already been renamed! This means it was probably already analyzed.')
 
         # run CellProfiler on a plate that has not been analyzed yet
         command = f"cellprofiler -c -r -p {path_to_pipeline} -o {path_to_output} --data-file {path_to_loaddata}"

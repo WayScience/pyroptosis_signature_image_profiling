@@ -36,6 +36,7 @@ def add_sc_count_metadata(data_path: pathlib.Path):
 
     data_df.to_csv(data_path)
 
+
 def extract_single_cells(
     single_cell_file: str,
     linking_cols: dict,
@@ -46,9 +47,10 @@ def extract_single_cells(
     feature_selection_sc: bool = False,
     norm_feature_select: bool = False,
 ):
-    """use Pycytominer SingleCells class to perform single cell extraction, normalization, and feature selection on
+    """
+    Use Pycytominer SingleCells class to perform single cell extraction, normalization, and feature selection on
     CellProfiler SQLite files. Normalization and feature selection are optional processes that you can choose
-    to turn on. This function will output all data into individual csv.gz files to a specified output folder. The 
+    to turn on. This function will output all data into individual csv.gz files to a specified output folder. The
     individual csv.gz are then updated to contain single cell count metadata.
 
     Args:
@@ -70,7 +72,7 @@ def extract_single_cells(
             if set to True, this will perform normalization on raw merged single cell data and feature extraction on
             the normalizated data (defaults to False)
     """
-    # instaniate the SingleCells class
+    # instantiate the SingleCells class
     sc = cells.SingleCells(
         sql_file=single_cell_file,
         compartments=["Per_DilatedNuclei", "Per_TranslocatedNuclei", "Per_Nuclei"],
@@ -98,7 +100,7 @@ def extract_single_cells(
     add_sc_count_metadata(sc_output_file)
 
     # Perform normalization on the raw extracted single cell data
-    if normalize_sc == True:
+    if normalize_sc:
         # Normalize single cell data and write to file
         normalize_sc_df = normalize(sc_df, method="standardize")
 
@@ -107,11 +109,11 @@ def extract_single_cells(
         )
 
         output(normalize_sc_df, sc_norm_output_file)
-        # add single cell count to the normalized data 
+        # add single cell count to the normalized data
         add_sc_count_metadata(sc_norm_output_file)
 
     # Perform feature selection on the raw extracted single cell data
-    if feature_selection_sc == True:
+    if feature_selection_sc:
         # Select features that will show significant difference between genotypes
         feature_select_ops = [
             "variance_threshold",
@@ -119,20 +121,18 @@ def extract_single_cells(
             "blocklist",
         ]
 
-        feature_select_norm_sc_df = feature_select(
-            sc_df, operation=feature_select_ops
-        )
+        feature_select_norm_sc_df = feature_select(sc_df, operation=feature_select_ops)
 
         sc_norm_fs_output_file = pathlib.Path(
             f"{output_folder}/sc_norm_fs_{method_name}.csv.gz"
         )
 
         output(feature_select_norm_sc_df, sc_norm_fs_output_file)
-        # add single cell count to the feature selected data 
+        # add single cell count to the feature selected data
         add_sc_count_metadata(sc_norm_fs_output_file)
 
     # Perform normalization on raw extracted single cells and perform feature selection on the normalized data
-    if norm_feature_select == True:
+    if norm_feature_select:
         # Normalize single cell data and write to file
         normalize_sc_df = normalize(sc_df, method="standardize")
 
@@ -141,7 +141,7 @@ def extract_single_cells(
         )
 
         output(normalize_sc_df, sc_norm_output_file)
-        # add single cell count to the normalized data 
+        # add single cell count to the normalized data
         add_sc_count_metadata(sc_norm_output_file)
 
         # Select features that will show significant difference between genotypes
@@ -160,5 +160,5 @@ def extract_single_cells(
         )
 
         output(feature_select_norm_sc_df, sc_norm_fs_output_file)
-        # add single cell count to the feature selected data 
+        # add single cell count to the feature selected data
         add_sc_count_metadata(sc_norm_fs_output_file)

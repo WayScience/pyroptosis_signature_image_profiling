@@ -15,8 +15,6 @@ import sys
 sys.path.append("../../utils/")
 import sc_extraction_utils as sc_util
 
-from pycytominer.cyto_utils import cells, output
-
 
 # ## Set up paths to CellProfiler directory and outputs
 

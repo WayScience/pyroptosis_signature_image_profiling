@@ -8,7 +8,6 @@
 # In[1]:
 
 
-import os
 import pathlib
 
 import sys
