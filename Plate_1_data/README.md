@@ -4,7 +4,7 @@ This module holds all of the analysis for the waves of data from plate 1 of the 
 
 ## The waves for the Interstellar plate 1
 
-Currently, there are three waves of data analyzed coming from [Plate 1](Plate_1_data/):
+Currently, there are three waves of data analyzed coming from [plate 1](Plate_1_data/):
 
 | Module | Wave title | Description |
 | :---- | :----- | :---------- |
