@@ -135,6 +135,7 @@ dmypy.json
 Plate_1_data/0.wave1_data/0.download_data/70117_20230118MM1_AbTest_V2__2023-01-25T16_44_54-Measurement1
 Plate_1_data/1.wave2_data/0.download_data/70117_20230118MM1_AbTest_ASC__2023-01-27T13_47_00-Measurement1
 Plate_1_data/2.wave3_data/0.download_data/70117_20230118MM1_CellPainting_A700_20X_V1__2023-02-06T09_42_13-Measurement1
+Plate_2_data/0.download_data/70117_20230210MM1_Gasdermin514_CP_BC430856__2023-03-22T15_42_38-Measurement1
 
 # ignore 6.6GB sqlite file as it can not be added to GitHub for Interstellar Wave 3
 interstellar_wave3.sqlite
