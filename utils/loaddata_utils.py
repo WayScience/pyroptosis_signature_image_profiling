@@ -12,7 +12,7 @@ def create_loaddata_csv(
     path_to_output: pathlib.Path,
 ):
     """
-    Create LoadData csv for CellProfiler (used for illum pipelines)
+    Create LoadData csv for CellProfiler (used for illum or zproj pipelines)
 
     Parameters
     ----------
