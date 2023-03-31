@@ -29,9 +29,9 @@ def create_loaddata_csv(
     command = [
         "pe2loaddata",
         "--index-directory",
-        index_directory,
-        config_path,
-        path_to_output,
+        str(index_directory),
+        str(config_path),
+        str(path_to_output),
     ]
     subprocess.run(command, check=True)
     print(f"{path_to_output.name} is created!")
@@ -66,16 +66,16 @@ def create_loaddata_illum_csv(
     command = [
         "pe2loaddata",
         "--index-directory",
-        index_directory,
-        config_path,
-        path_to_output,
+        str(index_directory),
+        str(config_path),
+        str(path_to_output),
         "--illum",
         "--illum-directory",
-        illum_directory,
+        str(illum_directory),
         "--plate-id",
         plate_id,
         "--illum-output",
-        illum_output_path,
+        str(illum_output_path),
     ]
     subprocess.run(command, check=True)
     print(f"{illum_output_path.name} is created!")
