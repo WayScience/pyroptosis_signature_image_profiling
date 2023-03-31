@@ -147,6 +147,3 @@ interstellar_wave3_sc_norm_fs_cellprofiler.csv.gz
 
 # ignore logs 
 logs
-
-# ignore LoadData CSVs from Plate 2 as it will be generated from the notebook and it is large
-Plate_2_data/1.cellprofiler_quality_control/loaddata_without_projection.csv
