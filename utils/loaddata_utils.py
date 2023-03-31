@@ -94,7 +94,7 @@ def edit_loaddata_csv(path_to_loaddata_csv: pathlib.Path):
     loaddata_df = pd.read_csv(path_to_loaddata_csv)
 
     # finds the last z-plane value and assigns it as a variable
-    # Metadata_PlaneID values are 1-3 which correlates to the file names p01-p03
+    # Metadata_PlaneID values can be any range of values, but this finds the max value
     final_z = max(loaddata_df["Metadata_PlaneID"].unique())
 
     # create df with only the rows with the last z-plane ID and edit path to the maximum projected images
