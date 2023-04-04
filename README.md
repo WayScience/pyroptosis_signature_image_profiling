@@ -20,6 +20,12 @@ To view the analysis of the morpoholgy features, please visit the [pyroptosis_si
 
 > There are three waves of data currently analyzed for the [Plate 1 data](Plate_1_data/). On this plate, it is broken down into section where there are either different treatments, different stains, or both. The breakdown of each of the waves can be found in [the README of the Plate_1_data module](Plate_1_data/README.md).
 
+## Platemap for plate 2
+
+![platemap_plate2](figures/platemap_plate2.png)
+
+> There are two different types of cells on plate 2, which are separated by column. PBMCs are in columns 2-12 and SH-SY5Y cells are in columns 13-23.
+
 ## Create conda environment for the whole repository
 
 All plates and waves will be using the same conda environment to run notebooks/python files.
