@@ -21,4 +21,4 @@ To create LoadData CSV and run CellProfiler to output the maximum projection ima
 bash loaddata_and_maxproj.sh
 ```
 
-To run this pipeline, it took approximately 8 hours.
+To run this pipeline, it took approximately 10 hours.

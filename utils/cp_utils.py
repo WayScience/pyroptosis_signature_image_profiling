@@ -87,7 +87,8 @@ def run_cellprofiler(
                 "--data-file",
                 path_to_loaddata,
             ]
-            subprocess.run(command, capture_output=cellprofiler_output_file, check=True)
+            subprocess.run(command, stdout=cellprofiler_output_file, stderr=cellprofiler_output_file, check=True)
+            print(f"The CellProfiler run has been completed with {pathlib.Path(path_to_loaddata).name}. Please check log file for any errors.")
 
     if analysis_run:
         # runs through any files that are in the output path
@@ -120,7 +121,8 @@ def run_cellprofiler(
                 "--data-file",
                 path_to_loaddata,
             ]
-            subprocess.run(command, capture_output=cellprofiler_output_file, check=True)
+            subprocess.run(command, stdout=cellprofiler_output_file, stderr=cellprofiler_output_file, check=True)
+            print(f"The CellProfiler run has been completed with {pathlib.Path(path_to_loaddata).name}. Please check log file for any errors.")
 
         # rename the outputted .sqlite file to the
         rename_sqlite_file(
