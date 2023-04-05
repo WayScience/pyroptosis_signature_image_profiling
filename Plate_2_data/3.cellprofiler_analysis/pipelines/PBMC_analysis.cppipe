@@ -2,11 +2,11 @@ CellProfiler Pipeline: http://www.cellprofiler.org
 Version:5
 DateRevision:424
 GitHash:
-ModuleCount:16
+ModuleCount:15
 HasImagePlaneDetails:False
 
 LoadData:[module_num:1|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
-    Input data file location:Default Input Folder sub-folder|pyroptosis_signature/Plate_2_data/3.cellprofiler_analysis/loaddata_by_celltype
+    Input data file location:Default Input Folder|pyroptosis_signature/Plate_2_data/3.cellprofiler_analysis/loaddata_by_celltype
     Name of the file:loaddata_PBMC_with_illum.csv
     Load images based on this data?:Yes
     Base image location:Default Input Folder|pyroptosis_signature/Plate_2_data/0.download_data/70117_20230210MM1_Gasdermin514_CP_BC430856__2023-03-22T15_42_38-Measurement1/Maximum_Images
@@ -106,14 +106,14 @@ IdentifySecondaryObjects:[module_num:4|svn_version:'Unknown'|variable_revision_n
     # of deviations:2.0
     Thresholding method:Minimum Cross-Entropy
 
-IdentifyTertiaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifyTertiaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the larger identified objects:Cells
     Select the smaller identified objects:Nuclei
     Name the tertiary objects to be identified:Cytoplasm
     Shrink smaller object prior to subtraction?:Yes
 
-MeasureColocalization:[module_num:6|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
-    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM, CorrRNA
+MeasureColocalization:[module_num:6|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:['Measure colocalization between whole images and objects']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM
     Set threshold as percentage of maximum intensity for the images:15.0
     Select where to measure correlation:Both
     Select objects to measure:Cells, Cytoplasm, Nuclei
@@ -125,8 +125,8 @@ MeasureColocalization:[module_num:6|svn_version:'Unknown'|variable_revision_numb
     Calculate the Manders coefficients using Costes auto threshold?:Yes
     Method for Costes thresholding:Faster
 
-MeasureGranularity:[module_num:7|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
-    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM, CorrRNA
+MeasureGranularity:[module_num:7|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['Defaults to measure granularity in whole images, but within objects is also measured']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM
     Measure within objects?:Yes
     Select objects to measure:Cells, Cytoplasm, Nuclei
     Subsampling factor for granularity measurements:0.25
@@ -134,32 +134,23 @@ MeasureGranularity:[module_num:7|svn_version:'Unknown'|variable_revision_number:
     Radius of structuring element:10
     Range of the granular spectrum:16
 
-MeasureGranularity:[module_num:8|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
-    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM, CorrRNA
-    Measure within objects?:No
-    Select objects to measure:Cytoplasm, Nuclei
-    Subsampling factor for granularity measurements:0.25
-    Subsampling factor for background reduction:0.25
-    Radius of structuring element:10
-    Range of the granular spectrum:16
-
-MeasureImageIntensity:[module_num:9|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
-    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM, CorrRNA
+MeasureImageIntensity:[module_num:8|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['Measure whole image intensity']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM
     Measure the intensity only from areas enclosed by objects?:No
     Select input object sets:
     Calculate custom percentiles:No
     Specify percentiles to measure:10,90
 
-MeasureObjectIntensity:[module_num:10|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
-    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM, CorrRNA
+MeasureObjectIntensity:[module_num:9|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['Measure object intensity']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM
     Select objects to measure:Cells, Cytoplasm, Nuclei
 
-MeasureObjectIntensityDistribution:[module_num:11|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
-    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM, CorrRNA
+MeasureObjectIntensityDistribution:[module_num:10|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['Measure Zernikes for Mike. Measures object intensity distribution']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM
     Hidden:3
     Hidden:1
     Hidden:0
-    Calculate intensity Zernikes?:None
+    Calculate intensity Zernikes?:Magnitudes and phase
     Maximum zernike moment:9
     Select objects to measure:Cells
     Object to use as center?:These objects
@@ -174,10 +165,10 @@ MeasureObjectIntensityDistribution:[module_num:11|svn_version:'Unknown'|variable
     Number of bins:4
     Maximum radius:100
 
-MeasureObjectNeighbors:[module_num:12|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
+MeasureObjectNeighbors:[module_num:11|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['Measures adjacent neighbors for nuclei']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select objects to measure:Nuclei
     Select neighboring objects to measure:Nuclei
-    Method to determine neighbors:Expand until adjacent
+    Method to determine neighbors:Adjacent
     Neighbor distance:5
     Consider objects discarded for touching image border?:Yes
     Retain the image of objects colored by numbers of neighbors?:No
@@ -187,10 +178,10 @@ MeasureObjectNeighbors:[module_num:12|svn_version:'Unknown'|variable_revision_nu
     Name the output image:PercentTouching
     Select colormap:Oranges
 
-MeasureObjectNeighbors:[module_num:13|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
+MeasureObjectNeighbors:[module_num:12|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['Measures adjacent neighbors for cells']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select objects to measure:Cells
     Select neighboring objects to measure:Cells
-    Method to determine neighbors:Expand until adjacent
+    Method to determine neighbors:Adjacent
     Neighbor distance:5
     Consider objects discarded for touching image border?:Yes
     Retain the image of objects colored by numbers of neighbors?:No
@@ -200,30 +191,30 @@ MeasureObjectNeighbors:[module_num:13|svn_version:'Unknown'|variable_revision_nu
     Name the output image:PercentTouching
     Select colormap:Oranges
 
-MeasureObjectSizeShape:[module_num:14|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
+MeasureObjectSizeShape:[module_num:13|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['Measure size and shape of objects']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select object sets to measure:Cells, Cytoplasm, Nuclei
     Calculate the Zernike features?:Yes
     Calculate the advanced features?:No
 
-MeasureTexture:[module_num:15|svn_version:'Unknown'|variable_revision_number:7|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
-    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM, CorrRNA
+MeasureTexture:[module_num:14|svn_version:'Unknown'|variable_revision_number:7|show_window:False|notes:['Measure texture of whole images and obejcts']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, CorrER, CorrGasdermin, CorrMito, CorrPM
     Select objects to measure:Cells, Cytoplasm, Nuclei
     Enter how many gray levels to measure the texture at:256
     Hidden:1
     Measure whole images or objects?:Both
     Texture scale to measure:3
 
-ExportToDatabase:[module_num:16|svn_version:'Unknown'|variable_revision_number:28|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
+ExportToDatabase:[module_num:15|svn_version:'Unknown'|variable_revision_number:28|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Database type:SQLite
     Database name:DefaultDB
     Add a prefix to table names?:No
     Table prefix:MyExpt_
-    Output file location:Default Input Folder sub-folder|Interstellar_Project/2.wave3_data/3.cellprofiler_analysis/analysis_output
+    Output file location:Default Output Folder|Interstellar_Project/2.wave3_data/3.cellprofiler_analysis/analysis_output
     Create a CellProfiler Analyst properties file?:No
     Database host:
     Username:
     Password:
-    Name the SQLite database file:interstellar_wave3.sqlite
+    Name the SQLite database file:interstellar_plate2.sqlite
     Calculate the per-image mean values of object measurements?:Yes
     Calculate the per-image median values of object measurements?:No
     Calculate the per-image standard deviation values of object measurements?:No
@@ -246,7 +237,7 @@ ExportToDatabase:[module_num:16|svn_version:'Unknown'|variable_revision_number:2
     Properties group field count:1
     Properties filter field count:0
     Workspace measurement count:1
-    Experiment name:Interstellar_Wave3
+    Experiment name:Interstellar_Plate2
     Which objects should be used for locations?:None
     Enter a phenotype class table name if using the Classifier tool in CellProfiler Analyst:
     Export object relationships?:Yes
