@@ -17,9 +17,12 @@ def rename_sqlite_file(
     """Rename the .sqlite file to be {method}.sqlite as to differentiate between the files
 
     Args:
-        sqlite_dir_path (pathlib.Path): path to CellProfiler_output directory
-        name (str): new name for the SQLite file
-        hardcode_sqlite_name (str): hardcoded name of the returned SQLite file from CellProfiler to change
+        sqlite_dir_path (pathlib.Path): 
+            path to CellProfiler_output directory
+        name (str): 
+            new name for the SQLite file
+        hardcode_sqlite_name (str): 
+            hardcoded name of the returned SQLite file from CellProfiler to change
     """
     try:
         # CellProfiler requires a name to be set in to pipeline, so regardless of plate or method, all sqlite files name are hardcoded
@@ -49,21 +52,36 @@ def run_cellprofiler(
     sqlite_name: Optional[None | str] = None,
     hardcode_sqlite_name: Optional[str | None] = None,
     analysis_run: Optional[bool | False] = False,
+    rename_sqlite_file: Optional[bool | False] = False,
 ):
     """Run CellProfiler on data using LoadData CSV. It can be used for both a illumination correction pipeline and analysis pipeline.
 
     Args:
-        path_to_pipeline (str): path to the CellProfiler .cppipe file with the segmentation and feature measurement modules
-        path_to_output (str): path to the output folder (the directory will be created if it doesn't already exist)
-        path_to_loaddata (str): path to the LoadData CSV to load in the images and IC functions
-        sqlite_name (str, optional): string with name for SQLite file for an analysis pipeline (default is None)
-        analysis_run (bool, optional): will use functions to complete an analysis pipeline (default is False)
+        path_to_pipeline (str): 
+            path to the CellProfiler .cppipe file with the segmentation and feature measurement modules
+        path_to_output (str): 
+            path to the output folder (the directory will be created if it doesn't already exist)
+        path_to_loaddata (str): 
+            path to the LoadData CSV to load in the images and IC functions
+        sqlite_name (str, optional): 
+            string with name for SQLite file for an analysis pipeline to either be renamed and/or to check to see if the
+            run has already happened (default is None)
+        analysis_run (bool, optional): 
+            will run an analysis pipeline and can rename sqlite files if using one pipeline for multiple datasets (default is False)
+        rename_sqlite_file (bool, optional): 
+            will rename the outputted SQLite file from the CellProfiler pipeline and rename it when using one
+            pipeline for multiple datasets. If kept as default, the SQLite file will not be renamed and the sqlite_name is used to 
+            find if the analysis pipeline has already been ran (default is False)
     """
     # check to make sure the paths to files are correct and they exists before running CellProfiler
     if not os.path.exists(path_to_pipeline):
         raise FileNotFoundError(f"Directory '{path_to_pipeline}' does not exist")
     if not os.path.exists(path_to_loaddata):
         raise FileNotFoundError(f"Directory '{path_to_loaddata}' does not exist")
+    
+    # make logs directory 
+    log_dir = pathlib.Path("./logs")
+    os.makedirs(log_dir, exist_ok=True)
 
     if not analysis_run:
         # run CellProfiler on a plate that has not been analyzed yet
@@ -87,11 +105,18 @@ def run_cellprofiler(
                 "--data-file",
                 path_to_loaddata,
             ]
-            subprocess.run(command, stdout=cellprofiler_output_file, stderr=cellprofiler_output_file, check=True)
-            print(f"The CellProfiler run has been completed with {pathlib.Path(path_to_loaddata).name}. Please check log file for any errors.")
+            subprocess.run(
+                command,
+                stdout=cellprofiler_output_file,
+                stderr=cellprofiler_output_file,
+                check=True,
+            )
+            print(
+                f"The CellProfiler run has been completed with {pathlib.Path(path_to_loaddata).name}. Please check log file for any errors."
+            )
 
     if analysis_run:
-        # runs through any files that are in the output path
+        # runs through any files that are in the output path and checks to see if analysis pipeline was already run
         if any(
             files.name.startswith(sqlite_name)
             for files in pathlib.Path(path_to_output).iterdir()
@@ -121,12 +146,20 @@ def run_cellprofiler(
                 "--data-file",
                 path_to_loaddata,
             ]
-            subprocess.run(command, stdout=cellprofiler_output_file, stderr=cellprofiler_output_file, check=True)
-            print(f"The CellProfiler run has been completed with {pathlib.Path(path_to_loaddata).name}. Please check log file for any errors.")
+            subprocess.run(
+                command,
+                stdout=cellprofiler_output_file,
+                stderr=cellprofiler_output_file,
+                check=True,
+            )
+            print(
+                f"The CellProfiler run has been completed with {pathlib.Path(path_to_loaddata).name}. Please check log file for any errors."
+            )
 
-        # rename the outputted .sqlite file to the
-        rename_sqlite_file(
-            sqlite_dir_path=pathlib.Path(path_to_output),
-            name=sqlite_name,
-            hardcode_sqlite_name=hardcode_sqlite_name,
-        )
+        if rename_sqlite_file:
+            # rename the outputted .sqlite file to the specified sqlite name if running one analysis pipeline
+            rename_sqlite_file(
+                sqlite_dir_path=pathlib.Path(path_to_output),
+                name=sqlite_name,
+                hardcode_sqlite_name=hardcode_sqlite_name,
+            )

@@ -6,7 +6,7 @@ We then ran a CellProfiler pipeline for calculating an illumination correction (
 
 As stated in the [previous module README](Plate_2_data/1.cellprofiler_quality_control/README.md), this methodology is inspired by a project from the Broad Institute and we had the guidance of [Erin Weisbart](https://github.com/ErinWeisbart).
 
-## Step 4: Create LoadData CSV, edit it, and calculate IC function for each channel in CellProfiler
+## Create LoadData CSV, edit it, and calculate IC function for each channel in CellProfiler
 
 To create, edit, and calculate illumination correction for the LoadData CSV data for all images per channel in the data, run the [loaddata_edit_and_ic.ipynb](loaddata_edit_and_ic.ipynb) notebook using the code below.
 
