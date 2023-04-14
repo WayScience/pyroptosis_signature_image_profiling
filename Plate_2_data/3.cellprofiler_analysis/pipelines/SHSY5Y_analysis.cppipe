@@ -40,7 +40,7 @@ CorrectIlluminationApply:[module_num:2|svn_version:'Unknown'|variable_revision_n
     Set output image values less than 0 equal to 0?:Yes
     Set output image values greater than 1 equal to 1?:Yes
 
-IdentifyPrimaryObjects:[module_num:3|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:['Since the cells are bigger, nuclei segmentation is easier but there are issues with very close nuclei/grouped nuclei so these are the best parameters I could make']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifyPrimaryObjects:[module_num:3|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:['Since the cells are bigger, nuclei segmentation is easier but there are issues with very close nuclei/grouped nuclei so these are the best parameters I could make.', '', 'Nuclei touching the borders are discarded.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input image:CorrDNA
     Name the primary objects to be identified:Nuclei
     Typical diameter of objects, in pixel units (Min,Max):30,70
@@ -76,14 +76,14 @@ IdentifyPrimaryObjects:[module_num:3|svn_version:'Unknown'|variable_revision_num
     # of deviations:2.0
     Thresholding method:Minimum Cross-Entropy
 
-IdentifySecondaryObjects:[module_num:4|svn_version:'Unknown'|variable_revision_number:10|show_window:False|notes:['These are the current best parameter']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifySecondaryObjects:[module_num:4|svn_version:'Unknown'|variable_revision_number:10|show_window:False|notes:['These are the current best parameters. Objects touching the border are discarded.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input objects:Nuclei
     Name the objects to be identified:Cells
     Select the method to identify the secondary objects:Propagation
     Select the input image:CorrPM
     Number of pixels by which to expand the primary objects:10
     Regularization factor:0.05
-    Discard secondary objects touching the border of the image?:No
+    Discard secondary objects touching the border of the image?:Yes
     Discard the associated primary objects?:No
     Name the new primary objects:FilteredNuclei
     Fill holes in identified objects?:Yes
@@ -165,7 +165,7 @@ MeasureObjectIntensityDistribution:[module_num:10|svn_version:'Unknown'|variable
     Number of bins:4
     Maximum radius:100
 
-MeasureObjectNeighbors:[module_num:11|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['Measures adjacent neighbors for each nuclei']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+MeasureObjectNeighbors:[module_num:11|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['Measures adjacent neighbors for each nuclei.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select objects to measure:Nuclei
     Select neighboring objects to measure:Nuclei
     Method to determine neighbors:Adjacent
@@ -204,24 +204,24 @@ MeasureTexture:[module_num:14|svn_version:'Unknown'|variable_revision_number:7|s
     Measure whole images or objects?:Both
     Texture scale to measure:3
 
-ExportToDatabase:[module_num:15|svn_version:'Unknown'|variable_revision_number:28|show_window:False|notes:['Hard code name as interstellar_plate2.sqlite']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+ExportToDatabase:[module_num:15|svn_version:'Unknown'|variable_revision_number:28|show_window:False|notes:['Make sure that the any parameters calculating per-image mean measurements is TURNED OFF or there will be a "MYSQL: maxmimum columns reached" error on the Per_Image table. Since there are so many images, having these added measurements will cause the Per_image table column number to increase dramatically.', '', 'Turned off export object relationships to keep the number of tables at a minimum.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Database type:SQLite
     Database name:DefaultDB
     Add a prefix to table names?:No
     Table prefix:MyExpt_
-    Output file location:Default Output Folder|Interstellar_Project/2.wave3_data/3.cellprofiler_analysis/analysis_output
+    Output file location:Default Output Folder|pyroptosis_signature/Plate_2_data/3.cellprofiler_analysis/analysis_output
     Create a CellProfiler Analyst properties file?:No
     Database host:
     Username:
     Password:
-    Name the SQLite database file:interstellar_plate2.sqlite
-    Calculate the per-image mean values of object measurements?:Yes
+    Name the SQLite database file:SHSY5Y_cells.sqlite
+    Calculate the per-image mean values of object measurements?:No
     Calculate the per-image median values of object measurements?:No
     Calculate the per-image standard deviation values of object measurements?:No
     Calculate the per-well mean values of object measurements?:No
     Calculate the per-well median values of object measurements?:No
     Calculate the per-well standard deviation values of object measurements?:No
-    Export measurements for all objects to the database?:Select...
+    Export measurements for all objects to the database?:All
     Select the objects:Cells,Cytoplasm,Nuclei
     Maximum # of characters in a column name:64
     Create one table per object, a single object table or a single object view?:One table per object type
@@ -240,7 +240,7 @@ ExportToDatabase:[module_num:15|svn_version:'Unknown'|variable_revision_number:2
     Experiment name:Interstellar_Plate2
     Which objects should be used for locations?:None
     Enter a phenotype class table name if using the Classifier tool in CellProfiler Analyst:
-    Export object relationships?:Yes
+    Export object relationships?:No
     Overwrite without warning?:Never
     Access CellProfiler Analyst images via URL?:No
     Select the classification type:Object
