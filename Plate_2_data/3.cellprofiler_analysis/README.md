@@ -18,4 +18,4 @@ cd Plate_2_data/3.cellprofiler_analysis/
 bash loaddata_edit_and_analysis.sh
 ```
 
-To run this notebook for all maximum projection images (4,928 image sets split by cell type), it took approximately __ days in total.
+To run this notebook for all maximum projection images (4,928 image sets split by cell type), it took approximately 8 days in total for SH-SY5Y.

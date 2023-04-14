@@ -108,7 +108,7 @@ def edit_loaddata_csv(path_to_loaddata_csv: pathlib.Path):
 
     # save the loaddata csv back to the same path
     loaddata_df.to_csv(path_to_loaddata_csv, index=False)
-    print(f"{path_to_loaddata_csv.name} has been corrected!")
+    print(f"{path_to_loaddata_csv.name} has been edited! All rows have been removed except rows with last z-plane. The remaining rows paths are updated.")
 
 def split_loaddata_csv_by_col(
     path_to_loadata: pathlib.Path,
