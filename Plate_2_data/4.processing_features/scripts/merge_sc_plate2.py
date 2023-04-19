@@ -6,10 +6,11 @@
 # In[1]:
 
 
-from cytotable import convert
+import sys
 import pathlib
 
-import sys
+from cytotable import convert
+
 sys.path.append("../../utils")
 import sc_extraction_utils as sc_utils
 

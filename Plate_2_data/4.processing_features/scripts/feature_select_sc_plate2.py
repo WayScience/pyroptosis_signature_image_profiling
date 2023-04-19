@@ -4,13 +4,13 @@
 # In[1]:
 
 
-import pandas as pd
+import sys
 import pathlib
 
+import pandas as pd
 from pycytominer import feature_select
 from pycytominer.cyto_utils import output
 
-import sys
 sys.path.append("../../utils")
 import sc_extraction_utils as sc_utils
 
