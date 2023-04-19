@@ -157,3 +157,6 @@ Plate_2_data/3.cellprofiler_analysis/analysis_output
 # ignore LoadData files used due to power interruption 
 Plate_2_data/3.cellprofiler_analysis/loaddata_by_celltype/SHSY5Y_cells_already_ran_illum.csv
 Plate_2_data/3.cellprofiler_analysis/loaddata_by_celltype/SHSY5Y_cells_need_to_be_run_illum.csv
+
+# ignore folder with parquet files as they are too large and will be generated from run
+Plate_2_data/4.processing_features/data
