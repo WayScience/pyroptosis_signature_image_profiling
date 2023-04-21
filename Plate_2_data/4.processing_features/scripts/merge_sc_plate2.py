@@ -16,7 +16,7 @@ import sc_extraction_utils as sc_utils
 
 
 # ## Set paths and variables
-# 
+#
 # All paths must be string but we use pathlib to show which variables are paths
 
 # In[2]:
@@ -60,7 +60,7 @@ sqlite_info_dictionary = {
 
 
 # ## Convert SQLite file and merge single cells into parquet file
-# 
+#
 # This was not run to completion as we use the nbconverted python file for full run.
 
 # In[4]:
@@ -86,4 +86,3 @@ for sqlite_file, info in sqlite_info_dictionary.items():
         data_path=dest_path, well_column_name="Image_Metadata_Well", file_type="parquet"
     )
     print(f"Added single cell count as metadata to {pathlib.Path(dest_path).name}!")
-
