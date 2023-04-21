@@ -53,8 +53,11 @@ for SHSY5Y_run, info in run_info_dictionary.items():
 
     # normalize annotated data
     normalized_df = normalize(
+            # df with annotated raw merged single cell features
             profiles=annotated_df,
+            # specify samples used as normalization reference (negative control)
             samples="Metadata_inhibitor == 'DMSO' and Metadata_inhibitor_concentration == 0.025 and Metadata_inducer1 == 'DMSO'",
+            # normalization method used
             method="standardize",
     )
 
