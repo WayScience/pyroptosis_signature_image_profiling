@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Perform feature selection on normalized data
+
+# ## Import libraries
+
 # In[1]:
 
 
@@ -14,6 +18,8 @@ from pycytominer.cyto_utils import output
 sys.path.append("../../utils")
 import sc_extraction_utils as sc_utils
 
+
+# ## Set paths and variables
 
 # In[2]:
 
@@ -33,6 +39,8 @@ run_info_dictionary = {
     },
 }
 
+
+# ## Perform feature selection
 
 # In[3]:
 
