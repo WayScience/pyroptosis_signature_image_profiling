@@ -28,4 +28,4 @@ dependencies:
     - cellprofiler==4.2.4
     - git+https://github.com/broadinstitute/pe2loaddata.git@0426dd6b9d8b3242294a6fbdef7c4e1ee762a4cc
     - git+https://github.com/cytomining/pycytominer@7e571322d211f66e716bf135c8b52898556fb960
-    
+    - git+https://github.com/cytomining/CytoTable@e3773183b8fd930a6513c65dd3e45418e9a5e80d
