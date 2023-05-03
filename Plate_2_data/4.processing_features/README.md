@@ -1,6 +1,6 @@
 # Extract single cells from CellProfiler output + normalize and feature select
 
-In this module, we extract single cell data from the CellProfiler .sqlite file outputs, convert to parquet files, and perform annotation to add platemap metadata, normalize features, and perform feature selection on the normalized features.
+In this module, we extract single cell data from the CellProfiler .sqlite file outputs, convert to parquet files, and perform annotation to add platemap metadata to each run, merge the runs into one parquet file, normalize features, and perform feature selection on the normalized features.
 
 ## CytoTable
 

@@ -15,9 +15,6 @@ import pandas as pd
 from pycytominer import annotate
 from pycytominer.cyto_utils import output
 
-sys.path.append("../../utils")
-import sc_extraction_utils as sc_utils
-
 
 # ## Set paths and variables
 
@@ -28,8 +25,8 @@ import sc_extraction_utils as sc_utils
 platemap_path = pathlib.Path("../../metadata/Interstellar_plate2_platemap.csv")
 platemap_df = pd.read_csv(platemap_path)
 
-# output directory for annotated file
-output_dir = pathlib.Path("./data/")
+# directory where parquet files are located
+data_dir = pathlib.Path("./data/")
 
 
 # In[3]:
@@ -39,11 +36,11 @@ output_dir = pathlib.Path("./data/")
 run_info_dictionary = {
     "SHSY5Y_first_run": {
         # path to parquet file from convert function
-        "single_cell_path": str(pathlib.Path("./data/SHSY5Y_first_run.parquet"))
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/SHSY5Y_first_run.parquet"))
     },
     "SHSY5Y_second_run": {
         # path to parquet file from convert function
-        "single_cell_path": str(pathlib.Path("./data/SHSY5Y_second_run.parquet")),
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/SHSY5Y_second_run.parquet")),
     },
 }
 
@@ -54,9 +51,9 @@ run_info_dictionary = {
 
 
 for SHSY5Y_run, info in run_info_dictionary.items():
-    # load in parquet file as df to use in annotate function
+    # load in converted parquet file as df to use in annotate function
     single_cell_df = pd.read_parquet(info["single_cell_path"])
-    output_file = str(pathlib.Path(f"{output_dir}/{SHSY5Y_run}_sc.parquet"))
+    output_file = str(pathlib.Path(f"{data_dir}/{SHSY5Y_run}_sc.parquet"))
     print(f"Adding annotations to merged single cells for {SHSY5Y_run}!")
 
     # add metadata from platemap file to extracted single cell features
@@ -85,6 +82,7 @@ for SHSY5Y_run, info in run_info_dictionary.items():
 # In[5]:
 
 
+# check last annotated df to see if it has been annotated correctly
 print(annotated_df.shape)
 annotated_df.head()
 
