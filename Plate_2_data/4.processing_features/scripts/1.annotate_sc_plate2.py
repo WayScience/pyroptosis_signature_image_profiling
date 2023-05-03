@@ -29,7 +29,7 @@ platemap_df = pd.read_csv(platemap_path)
 data_dir = pathlib.Path("./data/")
 
 
-# In[ ]:
+# In[3]:
 
 
 # dictionary with each run for the cell type
@@ -47,11 +47,11 @@ run_info_dictionary = {
 
 # ## Annotate merged single cells
 
-# In[3]:
+# In[4]:
 
 
 for SHSY5Y_run, info in run_info_dictionary.items():
-    # load in coverted parquet file as df to use in annotate function
+    # load in converted parquet file as df to use in annotate function
     single_cell_df = pd.read_parquet(info["single_cell_path"])
     output_file = str(pathlib.Path(f"{data_dir}/{SHSY5Y_run}_sc.parquet"))
     print(f"Adding annotations to merged single cells for {SHSY5Y_run}!")
@@ -79,7 +79,7 @@ for SHSY5Y_run, info in run_info_dictionary.items():
     print(f"Annotations have been added to {SHSY5Y_run} and saved!")
 
 
-# In[4]:
+# In[5]:
 
 
 # check last annotated df to see if it has been annotated correctly

@@ -54,7 +54,6 @@ print(f"Performing feature selection on normalized annotated merged single cells
 feature_select_df = feature_select(
     normalized_df,
     operation=feature_select_ops,
-    output_file="none",
 )
 
 # save features selected df as parquet file
