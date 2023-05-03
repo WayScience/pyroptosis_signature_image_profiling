@@ -9,7 +9,7 @@ import numpy as np
 
 
 def load_sqlite_as_df(
-    sqlite_file: str,
+    sqlite_file_path: str,
     image_table_name: str = "Per_Image",
 ) -> pd.DataFrame:
     """
@@ -17,7 +17,7 @@ def load_sqlite_as_df(
 
     Parameters
     ----------
-    sqlite_file : str
+    sqlite_file_path : str
         string of path to the sqlite file
     image_table_name : str
         string of the name with the image feature data (default = "Per_Image")
@@ -27,11 +27,7 @@ def load_sqlite_as_df(
     pd.DataFrame:
         dataframe containing image feature data
     """
-    engine = create_engine(sqlite_file)
-    conn = engine.connect()
-
-    image_query = f"select * from {image_table_name}"
-    image_df = pd.read_sql(sql=image_query, con=conn)
+    image_df = pd.read_sql_table(image_table_name, sqlite_file_path)
 
     return image_df
 
