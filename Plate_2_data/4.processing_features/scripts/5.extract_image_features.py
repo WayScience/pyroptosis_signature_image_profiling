@@ -34,6 +34,8 @@ platemap_df = pd.read_csv(pathlib.Path("../../metadata/Interstellar_plate2_plate
 # image categories/measurements to extract
 image_feature_categories = ["Image_Correlation", "Image_Granularity", "Image_Texture", "Image_Intensity"]
 image_cols="ImageNumber"
+# strata are the columns that can be used to groupby and/or aggregate, but I use it to make sure I have all
+# metadata I need to use to identify what exact image the features come from
 strata=["Image_Metadata_Well", "Image_Metadata_Plate", "Image_Metadata_Site"]
 
 run_info_dictionary = {

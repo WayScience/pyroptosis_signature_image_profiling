@@ -39,13 +39,15 @@ def extract_image_features(image_feature_categories, image_df, image_cols, strat
     Parameters
     ----------
     image_feature_categories : list of str
-        Input image feature groups to extract from the image table including the prefix (e.g. ["Image_Correlation", "Image_ImageQuality"])
+        Input image feature groups to extract from the image table including the prefix 
+        (e.g. ["Image_Correlation", "Image_ImageQuality"])
     image_df : pandas.core.frame.DataFrame
-        Image dataframe.
+        Image dataframe from SQLite file.
     image_cols : list of str
         Columns to select from the image table.
     strata :  list of str
-        The columns to groupby and aggregate single cells.
+        The columns to groupby and aggregate single cells (for Pycytominer). In this case, we use this to make sure 
+        that all identifiers for a cell to find what image it comes from are in the output.
     Returns
     -------
     image_features_df : pandas.core.frame.DataFrame
