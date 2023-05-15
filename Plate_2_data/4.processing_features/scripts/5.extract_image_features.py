@@ -20,6 +20,7 @@ import sys
 sys.path.append("../../utils")
 import extract_image_features_utils as extract_utils
 
+
 # ## Set paths and constants
 
 # In[2]:
@@ -73,6 +74,7 @@ SHSY5Y_run_df = pd.concat([image_df_first_run, image_df_second_run], ignore_inde
 print(SHSY5Y_run_df.shape)
 SHSY5Y_run_df.head()
 
+
 # ## Extract the image features, annotate with metadata, and save as parquet file
 
 # In[4]:
@@ -101,3 +103,27 @@ output(
     output_type='parquet',
 )
 print("The image features for the SHSY5Y cells have been extracted and saved!")
+
+
+# ## Confirm that the annotation worked
+# 
+# Check to see that data doesn't show NaNs when there should be values.
+
+# In[5]:
+
+
+print(annotated_image_features_df.shape)
+annotated_image_features_df.head()
+
+
+# In[6]:
+
+
+annotated_image_features_df["Metadata_inhibitor"].unique()
+
+
+# In[7]:
+
+
+annotated_image_features_df[annotated_image_features_df["Metadata_inhibitor"] == "DMSO"]
+
