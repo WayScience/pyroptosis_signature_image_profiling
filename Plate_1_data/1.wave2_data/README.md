@@ -1,6 +1,7 @@
 # ASC Bleedthrough Assessment - Wave 2
 
 In this wave of Plate 1 data, we have images from two different conditions with four channels, totalling 4,608 images.
+We assess with each condition the amount of bleedthrough in the ASC Speck channel from the deep red mitochondria channel.
 
 The conditions are as follows:
 
