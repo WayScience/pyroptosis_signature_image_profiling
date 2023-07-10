@@ -26,21 +26,46 @@ platemap_path = pathlib.Path("../../metadata/Interstellar_plate2_platemap.csv")
 platemap_df = pd.read_csv(platemap_path)
 
 # directory where parquet files are located
-data_dir = pathlib.Path("./data/")
+data_dir = pathlib.Path("./data/converted_data")
+
+# directory where the annotated parquet files are saved to
+output_dir = pathlib.Path("./data/annotated_data")
+output_dir.mkdir(exist_ok=True)
 
 
 # In[3]:
 
 
 # dictionary with each run for the cell type
+# dictionary with path to the parquet file from each run
 run_info_dictionary = {
-    "SHSY5Y_first_run": {
-        # path to parquet file from convert function
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/SHSY5Y_first_run.parquet"))
+    "batch_1": {
+        # path to outputted parquet file
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_1.parquet")),
     },
-    "SHSY5Y_second_run": {
-        # path to parquet file from convert function
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/SHSY5Y_second_run.parquet")),
+    "batch_2": {
+        # path to outputted parquet file
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_2.parquet"))
+    },
+    "batch_3": {
+        # path to outputted parquet file
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_3.parquet"))
+    },
+    "batch_4": {
+        # path to outputted parquet file
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_4.parquet"))
+    },
+    "batch_5": {
+        # path to outputted parquet file
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_5.parquet")),
+    },
+    "batch_6": {
+        # path to outputted parquet file
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_6.parquet"))
+    },
+    "batch_7": {
+        # path to outputted parquet file
+        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_7.parquet"))
     },
 }
 
@@ -50,11 +75,11 @@ run_info_dictionary = {
 # In[4]:
 
 
-for SHSY5Y_run, info in run_info_dictionary.items():
+for PBMC_run, info in run_info_dictionary.items():
     # load in converted parquet file as df to use in annotate function
     single_cell_df = pd.read_parquet(info["single_cell_path"])
-    output_file = str(pathlib.Path(f"{data_dir}/{SHSY5Y_run}_sc.parquet"))
-    print(f"Adding annotations to merged single cells for {SHSY5Y_run}!")
+    output_file = str(pathlib.Path(f"{output_dir}/{PBMC_run}_sc.parquet"))
+    print(f"Adding annotations to merged single cells for {PBMC_run}!")
 
     # add metadata from platemap file to extracted single cell features
     annotated_df = annotate(
@@ -76,7 +101,7 @@ for SHSY5Y_run, info in run_info_dictionary.items():
         output_filename=output_file,
         output_type="parquet",
     )
-    print(f"Annotations have been added to {SHSY5Y_run} and saved!")
+    print(f"Annotations have been added to {PBMC_run} and saved!")
 
 
 # In[5]:
@@ -85,4 +110,3 @@ for SHSY5Y_run, info in run_info_dictionary.items():
 # check last annotated df to see if it has been annotated correctly
 print(annotated_df.shape)
 annotated_df.head()
-

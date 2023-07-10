@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Extract image features
-# 
+#
 # **Note:** This does not include any processing of the features (e.g. normalization/feature selection/etc.)
 
 # ## Import libraries
@@ -17,6 +17,7 @@ from pycytominer import annotate
 from pycytominer.cyto_utils import output
 
 import sys
+
 sys.path.append("../../utils")
 import extract_image_features_utils as extract_utils
 
@@ -29,24 +30,34 @@ import extract_image_features_utils as extract_utils
 # Set file and directory constants
 cp_output_dir = pathlib.Path("../3.cellprofiler_analysis/analysis_output")
 features_output_dir = pathlib.Path("./data")
-platemap_df = pd.read_csv(pathlib.Path("../../metadata/Interstellar_plate2_platemap.csv"))
+platemap_df = pd.read_csv(
+    pathlib.Path("../../metadata/Interstellar_plate2_platemap.csv")
+)
 
 # image categories/measurements to extract
-image_feature_categories = ["Image_Correlation", "Image_Granularity", "Image_Texture", "Image_Intensity"]
-image_cols="ImageNumber"
+image_feature_categories = [
+    "Image_Correlation",
+    "Image_Granularity",
+    "Image_Texture",
+    "Image_Intensity",
+]
+image_cols = "ImageNumber"
 # strata are the columns that can be used to groupby and/or aggregate, but I use it to make sure I have all
 # metadata I need to use to identify what exact image the features come from
-strata=["Image_Metadata_Well", "Image_Metadata_Plate", "Image_Metadata_Site"]
+strata = ["Image_Metadata_Well", "Image_Metadata_Plate", "Image_Metadata_Site"]
 
 run_info_dictionary = {
     "SHSY5Y_first_run": {
         "sql_file": "SHSY5Y_cells_incomplete_first_run.sqlite",
-        "image_features_output_file": pathlib.Path(f"{features_output_dir}/frist_run_image_quality.csv.gz"),
-
+        "image_features_output_file": pathlib.Path(
+            f"{features_output_dir}/frist_run_image_quality.csv.gz"
+        ),
     },
     "SHSY5Y_second_run": {
         "sql_file": "SHSY5Y_cells_second_run.sqlite",
-        "image_features_output_file": pathlib.Path(f"{features_output_dir}/second_run_image_quality.csv.gz"),
+        "image_features_output_file": pathlib.Path(
+            f"{features_output_dir}/second_run_image_quality.csv.gz"
+        ),
     },
 }
 
@@ -87,7 +98,7 @@ image_features_df = extract_utils.extract_image_features(
     image_feature_categories=image_feature_categories,
     image_df=SHSY5Y_run_df,
     image_cols=image_cols,
-    strata=strata
+    strata=strata,
 )
 
 # annotate df with platemap file to include all metadata
@@ -101,14 +112,16 @@ annotated_image_features_df = annotate(
 # output df as parquet file
 output(
     df=annotated_image_features_df,
-    output_filename=pathlib.Path(f"{features_output_dir}/plate2_SHSY5Y_image_features.parquet"),
-    output_type='parquet',
+    output_filename=pathlib.Path(
+        f"{features_output_dir}/plate2_SHSY5Y_image_features.parquet"
+    ),
+    output_type="parquet",
 )
 print("The image features for the SHSY5Y cells have been extracted and saved!")
 
 
 # ## Confirm that the annotation worked
-# 
+#
 # Check to see that data doesn't show NaNs when there should be values.
 
 # In[5]:
@@ -128,4 +141,3 @@ annotated_image_features_df["Metadata_inhibitor"].unique()
 
 
 annotated_image_features_df[annotated_image_features_df["Metadata_inhibitor"] == "DMSO"]
-

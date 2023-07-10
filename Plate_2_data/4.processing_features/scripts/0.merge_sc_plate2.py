@@ -16,7 +16,7 @@ import sc_extraction_utils as sc_utils
 
 
 # ## Set paths and variables
-# 
+#
 # All paths must be string but we use pathlib to show which variables are paths
 
 # In[2]:
@@ -29,38 +29,60 @@ dest_datatype = "parquet"
 preset = "cellprofiler_sqlite_pycytominer"
 
 # directory where parquet files are saved to
-output_dir = "data"
+output_dir = pathlib.Path("./data/converted_data")
+output_dir.mkdir(exist_ok=True)
 
 
 # In[3]:
 
 
+# set directory for sqlite files
+sqlite_dir = pathlib.Path(
+    "/media/lippincm/c58d4f19-ae4d-4b78-8370-2c2639886da0/interstellar_data/70117_20230210MM1_Gasdermin514_CP_BC430856__2023-03-22T15_42_38-Measurement1/PBMC_SQLite_Outputs"
+).resolve(strict=True)
+
 # dictionary with info for the sqlite file from each run
 sqlite_info_dictionary = {
-    "SHSY5Y_first_run": {
-        # path to outputed SQLite file
-        "source_path": str(
-            pathlib.Path(
-                "../3.cellprofiler_analysis/analysis_output/SHSY5Y_cells_incomplete_first_run.sqlite"
-            )
-        ),
-        "dest_path": str(pathlib.Path(f"{output_dir}/SHSY5Y_first_run.parquet")),
+    "batch_1": {
+        # path to outputted SQLite file
+        "source_path": str(pathlib.Path(f"{sqlite_dir}/PBMC_batch_1.sqlite")),
+        "dest_path": str(pathlib.Path(f"{output_dir}/PBMC_batch_1.parquet")),
     },
-    "SHSY5Y_second_run": {
-        # path to outputed SQLite file
-        "source_path": str(
-            pathlib.Path(
-                "../3.cellprofiler_analysis/analysis_output/SHSY5Y_cells_second_run.sqlite"
-            )
-        ),
-        # path for merged single cell paraquet file (without annotations)
-        "dest_path": str(pathlib.Path(f"{output_dir}/SHSY5Y_second_run.parquet")),
+    "batch_2": {
+        # path to outputted SQLite file
+        "source_path": str(pathlib.Path(f"{sqlite_dir}/PBMC_batch_2.sqlite")),
+        "dest_path": str(pathlib.Path(f"{output_dir}/PBMC_batch_2.parquet")),
+    },
+    "batch_3": {
+        # path to outputted SQLite file
+        "source_path": str(pathlib.Path(f"{sqlite_dir}/PBMC_batch_3.sqlite")),
+        "dest_path": str(pathlib.Path(f"{output_dir}/PBMC_batch_3.parquet")),
+    },
+    "batch_4": {
+        # path to outputted SQLite file
+        "source_path": str(pathlib.Path(f"{sqlite_dir}/PBMC_batch_4.sqlite")),
+        "dest_path": str(pathlib.Path(f"{output_dir}/PBMC_batch_4.parquet")),
+    },
+    "batch_5": {
+        # path to outputted SQLite file
+        "source_path": str(pathlib.Path(f"{sqlite_dir}/PBMC_batch_5.sqlite")),
+        "dest_path": str(pathlib.Path(f"{output_dir}/PBMC_batch_5.parquet")),
+    },
+    "batch_6": {
+        # path to outputted SQLite file
+        "source_path": str(pathlib.Path(f"{sqlite_dir}/PBMC_batch_6.sqlite")),
+        "dest_path": str(pathlib.Path(f"{output_dir}/PBMC_batch_6.parquet")),
+    },
+    "batch_7": {
+        # path to outputted SQLite file
+        "source_path": str(pathlib.Path(f"{sqlite_dir}/PBMC_batch_7.sqlite")),
+        "dest_path": str(pathlib.Path(f"{output_dir}/PBMC_batch_7.parquet")),
     },
 }
 
 
 # ## Convert SQLite file and merge single cells into parquet file
-# 
+#
 # This was not run to completion as we use the nbconverted python file for full run.
 
 # In[4]:
@@ -86,4 +108,3 @@ for sqlite_file, info in sqlite_info_dictionary.items():
         data_path=dest_path, well_column_name="Image_Metadata_Well", file_type="parquet"
     )
     print(f"Added single cell count as metadata to {pathlib.Path(dest_path).name}!")
-

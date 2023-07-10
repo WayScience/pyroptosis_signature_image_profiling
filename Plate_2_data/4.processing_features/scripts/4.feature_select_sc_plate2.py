@@ -22,14 +22,20 @@ from pycytominer.cyto_utils import output
 # In[2]:
 
 
-# directory where parquet files are located
+# directory where normalized parquet file is located
 data_dir = pathlib.Path("./data/")
+
+# directory where the feature selected parquet file is saved to
+output_dir = pathlib.Path("./data/feature_selected_data")
+output_dir.mkdir(exist_ok=True)
 
 # define input path
 normalized_file_path = str(pathlib.Path(f"{data_dir}/SHSY5Y_sc_norm.parquet"))
 
 # define ouput path
-feature_select_output_file = str(pathlib.Path(f"{data_dir}/SHSY5Y_sc_norm_fs.parquet"))
+feature_select_output_file = str(
+    pathlib.Path(f"{output_dir}/SHSY5Y_sc_norm_fs.parquet")
+)
 
 
 # ## Perform feature selection
@@ -45,7 +51,6 @@ feature_select_ops = [
 ]
 
 # process each run
-# for SHSY5Y_run, info in run_info_dictionary.items():
 normalized_df = pd.read_parquet(normalized_file_path)
 
 print(f"Performing feature selection on normalized annotated merged single cells!")
@@ -60,9 +65,11 @@ feature_select_df = feature_select(
 output(
     df=feature_select_df,
     output_filename=feature_select_output_file,
-    output_type="parquet"
+    output_type="parquet",
 )
-print(f"Features have been selected for SHSY5Y cells and saved to {pathlib.Path(feature_select_output_file).name}!")
+print(
+    f"Features have been selected for PBMC cells and saved to {pathlib.Path(feature_select_output_file).name}!"
+)
 
 
 # In[4]:
@@ -71,4 +78,3 @@ print(f"Features have been selected for SHSY5Y cells and saved to {pathlib.Path(
 # check to see if the shape of the df has changed indicating feature selection occurred
 print(feature_select_df.shape)
 feature_select_df.head()
-
