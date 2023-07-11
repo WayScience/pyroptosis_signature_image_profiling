@@ -4,10 +4,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 
-#SBATCH --mem=500G
+#SBATCH --mem=600G
 #SBATCH --partition=amem
 #SBATCH --qos=mem
-#SBATCH --time=25:00:00
+#SBATCH --time=48:00:00
 #SBATCH --output=sample-%j.out
 
 module purge
@@ -34,5 +34,5 @@ python scripts/3.normalize_sc_plate2.py
 echo "Feature selecting plate 2 data"
 python scripts/4.feature_select_sc_plate2.py
 echo "Extracting image features from plate 2 data"
-python scripts/5.extract_image_features
+python scripts/5.extract_image_features.py
 echo "Processing of plate 2 data complete"
