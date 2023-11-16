@@ -1,13 +1,12 @@
 #!/bin/bash
 
-
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 
 #SBATCH --mem=600G
 #SBATCH --partition=amem
 #SBATCH --qos=mem
-#SBATCH --time=48:00:00
+#SBATCH --time=72:00:00
 #SBATCH --output=sample-%j.out
 
 module purge
