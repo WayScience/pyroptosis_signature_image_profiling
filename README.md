@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/594092827.svg)](https://zenodo.org/doi/10.5281/zenodo.10806369)
 # Pyroptosis signature project 
 
 This repository contains the pipelines used to extract single cell morphology features (and/or image features) from different plates. 
