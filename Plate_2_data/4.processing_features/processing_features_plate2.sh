@@ -3,7 +3,6 @@
 
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-
 #SBATCH --mem=600G
 #SBATCH --partition=amem
 #SBATCH --qos=mem
