@@ -27,4 +27,4 @@ python scripts/0.merge_sc_plate2.py
 echo "Annotating plate 2 data"
 python scripts/1.annotate_sc_plate2.py
 
-echo "Processing of plate 2 data steps 0-1 complete"
+# echo "Processing of plate 2 data steps 0-1 complete"

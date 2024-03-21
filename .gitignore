@@ -160,3 +160,6 @@ Plate_2_data/3.cellprofiler_analysis/loaddata_by_celltype/SHSY5Y_cells_need_to_b
 
 # ignore folder with parquet files as they are too large and will be generated from run
 Plate_2_data/4.processing_features/data
+
+# parsl logs
+Plate_2_data/4.processing_features/runinfo/*

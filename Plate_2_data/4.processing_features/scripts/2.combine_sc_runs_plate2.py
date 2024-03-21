@@ -34,13 +34,13 @@ merged_runs_path = pathlib.Path(f"{output_dir}/PBMC_sc.parquet")
 
 
 # set paths to each individual run file after annotation
-first_run_sc_path = pathlib.Path(f"{annotated_dir}/PBMC_batch_1.parquet")
-second_run_sc_path = pathlib.Path(f"{annotated_dir}/PBMC_batch_2.parquet")
-third_run_sc_path = pathlib.Path(f"{annotated_dir}/PBMC_batch_3.parquet")
-fourth_run_sc_path = pathlib.Path(f"{annotated_dir}/PBMC_batch_4.parquet")
-fifth_run_sc_path = pathlib.Path(f"{annotated_dir}/PBMC_batch_5.parquet")
-sixth_run_sc_path = pathlib.Path(f"{annotated_dir}/PBMC_batch_6.parquet")
-seventh_run_sc_path = pathlib.Path(f"{annotated_dir}/PBMC_batch_7.parquet")
+first_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_1_sc.parquet")
+second_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_2_sc.parquet")
+third_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_3_sc.parquet")
+fourth_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_4_sc.parquet")
+fifth_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_5_sc.parquet")
+sixth_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_6_sc.parquet")
+seventh_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_7_sc.parquet")
 
 
 # ## Combine the parquet files into one
@@ -84,3 +84,4 @@ print(f"The runs have been merged into one file called {merged_runs_path.name}!"
 # check to see if the merge function worked (should be approximately 600,000 rows)
 print(PBMC_run_sc.shape)
 PBMC_run_sc.head()
+

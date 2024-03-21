@@ -41,32 +41,60 @@ output_dir.mkdir(exist_ok=True)
 run_info_dictionary = {
     "batch_1": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_1.parquet")),
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/PBMC_batch_1.parquet"
+            )
+        ),
     },
     "batch_2": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_2.parquet"))
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/PBMC_batch_2.parquet"
+            )
+        )
     },
     "batch_3": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_3.parquet"))
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/PBMC_batch_3.parquet"
+            )
+        )
     },
     "batch_4": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_4.parquet"))
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/PBMC_batch_4.parquet"
+            )
+        )
     },
     "batch_5": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_5.parquet")),
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/PBMC_batch_5.parquet"
+            )
+        ),
     },
     "batch_6": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_6.parquet"))
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/PBMC_batch_6.parquet"
+            )
+        )
     },
     "batch_7": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_7.parquet"))
-    },
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/PBMC_batch_7.parquet"
+            )
+        )
+    }   
 }
 
 
@@ -110,3 +138,4 @@ for PBMC_run, info in run_info_dictionary.items():
 # check last annotated df to see if it has been annotated correctly
 print(annotated_df.shape)
 annotated_df.head()
+

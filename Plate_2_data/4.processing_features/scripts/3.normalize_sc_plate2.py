@@ -45,12 +45,12 @@ print("Normalizing annotated merged single cells!")
 
 # normalize annotated data
 normalized_df = normalize(
-    # df with annotated raw merged single cell features
-    profiles=combined_df,
-    # specify samples used as normalization reference (negative control)
-    samples="Metadata_inhibitor == 'DMSO' and Metadata_inhibitor_concentration == 0.025 and Metadata_inducer1 == 'DMSO'",
-    # normalization method used
-    method="standardize",
+        # df with annotated raw merged single cell features
+        profiles=combined_df,
+        # specify samples used as normalization reference (negative control)
+        samples="Metadata_inhibitor == 'DMSO' and Metadata_inhibitor_concentration == 0.025 and Metadata_inducer1 == 'DMSO'",
+        # normalization method used
+        method="standardize",
 )
 
 # save df as parquet file
@@ -59,9 +59,7 @@ output(
     output_filename=normalized_output_file,
     output_type="parquet",
 )
-print(
-    f"Single cells have been normalized for PBMC cells and saved to {pathlib.Path(normalized_output_file).name} !"
-)
+print(f"Single cells have been normalized for PBMC cells and saved to {pathlib.Path(normalized_output_file).name} !")
 
 
 # In[4]:
@@ -70,3 +68,4 @@ print(
 # check to see if the features have been normalized
 print(normalized_df.shape)
 normalized_df.head()
+
