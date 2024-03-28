@@ -31,7 +31,7 @@ dest_datatype = "parquet"
 preset = "cellprofiler_sqlite_pycytominer"
 
 # directory where parquet files are saved to
-output_dir = pathlib.Path("/home/lippincm/Documents/4TB/data/pyroptosis_intermediate")
+output_dir = pathlib.Path("./data/converted_data")
 output_dir.mkdir(exist_ok=True, parents=True)
 
 

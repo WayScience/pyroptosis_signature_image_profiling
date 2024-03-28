@@ -46,6 +46,7 @@ feature_select_ops = [
     "variance_threshold",
     "correlation_threshold",
     "blocklist",
+    "drop_na_columns",
 ]
 
 # process each run

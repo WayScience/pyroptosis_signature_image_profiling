@@ -10,6 +10,7 @@
 
 import pandas as pd
 import pathlib
+import gc
 
 from pycytominer.cyto_utils import output
 
@@ -49,6 +50,7 @@ seventh_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_7_sc.parquet")
 
 
 # read parquet files into pandas dataframes
+print("Reading parquet files into pandas dataframes...")
 first_run_sc = pd.read_parquet(first_run_sc_path)
 second_run_sc = pd.read_parquet(second_run_sc_path)
 third_run_sc = pd.read_parquet(third_run_sc_path)
@@ -57,19 +59,77 @@ fifth_run_sc = pd.read_parquet(fifth_run_sc_path)
 sixth_run_sc = pd.read_parquet(sixth_run_sc_path)
 seventh_run_sc = pd.read_parquet(seventh_run_sc_path)
 
+print("Merging runs into one dataframe...")
 # concatenate dataframes and save as parquet file
+print("Concatenating dataframes 1 and 2...")
 PBMC_run_sc = pd.concat(
     [
         first_run_sc,
-        second_run_sc,
-        third_run_sc,
-        fourth_run_sc,
-        fifth_run_sc,
-        sixth_run_sc,
-        seventh_run_sc,
+        second_run_sc
     ],
     ignore_index=True,
 )
+del first_run_sc, second_run_sc
+gc.collect()
+
+print("Concatenating dataframe 3")
+
+PBMC_run_sc = pd.concat(
+    [
+    PBMC_run_sc,
+    third_run_sc,
+    ],
+    ignore_index=True,
+)
+del third_run_sc
+gc.collect()
+
+print("Concatenating dataframe 4")
+PBMC_run_sc = pd.concat(
+    [
+    PBMC_run_sc,
+    fourth_run_sc,
+    ],
+    ignore_index=True,
+)
+del fourth_run_sc
+gc.collect()
+
+print("Concatenating dataframe 5")
+PBMC_run_sc = pd.concat(
+    [
+    PBMC_run_sc,
+    fifth_run_sc,
+    ],
+    ignore_index=True,
+)
+del fifth_run_sc
+gc.collect()
+
+print("Concatenating dataframe 6")
+PBMC_run_sc = pd.concat(
+    [
+    PBMC_run_sc,
+    sixth_run_sc,
+    ],
+    ignore_index=True,
+)
+del sixth_run_sc
+gc.collect()
+
+print("Concatenating dataframe 7")
+PBMC_run_sc = pd.concat(
+    [
+    PBMC_run_sc,
+    seventh_run_sc,
+    ],
+    ignore_index=True,
+)
+del seventh_run_sc
+gc.collect()
+
+print("Saving merged runs to parquet file...")
+
 output(
     df=PBMC_run_sc,
     output_filename=merged_runs_path,

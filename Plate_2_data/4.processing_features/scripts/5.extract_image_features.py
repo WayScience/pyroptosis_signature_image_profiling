@@ -40,7 +40,7 @@ strata=["Image_Metadata_Well", "Image_Metadata_Plate", "Image_Metadata_Site"]
 
 # set directory for sqlite files
 sqlite_dir = pathlib.Path(
-    "/projects/mlippincott@xsede.org/"
+    "/home/lippincm/Desktop/18T/interstellar_data/PBMC_SQLite_Outputs/"
 ).resolve(strict=True)
 
 # dictionary with info for the sqlite file from each run
