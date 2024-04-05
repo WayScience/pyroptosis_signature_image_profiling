@@ -5,7 +5,7 @@
 
 # ## Import libraries
 
-# In[ ]:
+# In[1]:
 
 
 import pathlib
@@ -17,7 +17,7 @@ from pycytominer.cyto_utils import output
 
 # ## Set paths and variables
 
-# In[ ]:
+# In[2]:
 
 
 # directory where combined parquet file are located
@@ -34,9 +34,18 @@ combined_file_path = str(pathlib.Path(f"{data_dir}/SHSY5Y_sc.parquet"))
 normalized_output_file = str(pathlib.Path(f"{output_dir}/SHSY5Y_sc_norm.parquet"))
 
 
+# In[3]:
+
+
+# read in annotated single cell data
+combined_df = pd.read_parquet(combined_file_path)
+metadata_cols = combined_df.columns[combined_df.columns.str.contains("Metadata")]
+metadata_cols
+
+
 # ## Normalize with standardize method with negative control on annotated data
 
-# In[ ]:
+# In[3]:
 
 
 # read in annotated single cell data
@@ -62,7 +71,7 @@ output(
 print(f"Single cells have been normalized for SHSY5Y cells and saved to {pathlib.Path(normalized_output_file).name} !")
 
 
-# In[ ]:
+# In[4]:
 
 
 # check to see if the features have been normalized

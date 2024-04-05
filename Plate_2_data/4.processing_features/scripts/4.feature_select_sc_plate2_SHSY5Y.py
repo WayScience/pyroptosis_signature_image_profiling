@@ -5,7 +5,7 @@
 
 # ## Import libraries
 
-# In[ ]:
+# In[1]:
 
 
 import sys
@@ -19,7 +19,7 @@ from pycytominer.cyto_utils import output
 
 # ## Set paths and variables
 
-# In[ ]:
+# In[2]:
 
 
 # directory where normalized parquet file is located
@@ -36,22 +36,31 @@ normalized_file_path = str(pathlib.Path(f"{data_dir}/SHSY5Y_sc_norm.parquet"))
 feature_select_output_file = str(pathlib.Path(f"{output_dir}/SHSY5Y_sc_norm_fs.parquet"))
 
 
-# In[ ]:
+# In[3]:
 
 
 # process each run
 normalized_df = pd.read_parquet(normalized_file_path)
 
 
-# In[ ]:
+# In[4]:
 
 
 normalized_df.shape
 
 
+# In[6]:
+
+
+normalized_df.head()
+# get metadata columns
+metadata_cols = normalized_df.columns[normalized_df.columns.str.contains("Site")]
+metadata_cols
+
+
 # ## Perform feature selection
 
-# In[ ]:
+# In[6]:
 
 
 # list of operations for feature select function to use on input profile
@@ -131,6 +140,14 @@ print(f"Features have been selected for SHSY5Y cells and saved to {pathlib.Path(
 # check to see if the shape of the df has changed indicating feature selection occurred
 print(feature_select_df.shape)
 feature_select_df.head()
+
+
+# In[ ]:
+
+
+# get metadata columns
+metadata_cols = feature_select_df.columns[feature_select_df.columns.str.contains("Metadata")]
+metadata_cols
 
 
 # In[ ]:

@@ -5,7 +5,7 @@
 
 # ## Import libraries
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
@@ -17,7 +17,7 @@ from pycytominer.cyto_utils import output
 
 # ## Set paths
 
-# In[ ]:
+# In[2]:
 
 
 # set path to parquet directory with annotated runs
@@ -31,7 +31,7 @@ output_dir.mkdir(exist_ok=True)
 merged_runs_path = pathlib.Path(f"{output_dir}/SHSY5Y_sc.parquet")
 
 
-# In[ ]:
+# In[3]:
 
 
 # set paths to each individual run file after annotation
@@ -41,7 +41,7 @@ second_run_sc_path = pathlib.Path(f"{annotated_dir}/batch_2_sc_SHSY5Y.parquet")
 
 # ## Combine the parquet files into one
 
-# In[ ]:
+# In[4]:
 
 
 # read parquet files into pandas dataframes
@@ -70,7 +70,7 @@ output(
 print(f"The runs have been merged into one file called {merged_runs_path.name}!")
 
 
-# In[ ]:
+# In[5]:
 
 
 # check to see if the merge function worked (should be approximately 600,000 rows)

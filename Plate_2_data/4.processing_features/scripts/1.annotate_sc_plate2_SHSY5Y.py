@@ -66,7 +66,7 @@ run_info_dictionary = {
 for SHSY5Y_run, info in run_info_dictionary.items():
     # load in converted parquet file as df to use in annotate function
     single_cell_df = pd.read_parquet(info["single_cell_path"])
-    output_file = str(pathlib.Path(f"{output_dir}/{SHSY5Y_run}_sc.parquet"))
+    output_file = str(pathlib.Path(f"{output_dir}/{SHSY5Y_run}_sc_SHSY5Y.parquet"))
     print(f"Adding annotations to merged single cells for {SHSY5Y_run}!")
 
     # add metadata from platemap file to extracted single cell features

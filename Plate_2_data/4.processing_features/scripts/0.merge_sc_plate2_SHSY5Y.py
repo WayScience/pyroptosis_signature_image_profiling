@@ -3,13 +3,13 @@
 
 # # Merge single cells from CellProfiler outputs using CytoTable
 
-# In[ ]:
+# In[1]:
 
 
 import sys
 import pathlib
 
-from cytotable import convert
+from cytotable import convert, presets
 
 sys.path.append("../../utils")
 import sc_extraction_utils as sc_utils
@@ -21,21 +21,55 @@ from parsl.executors import HighThroughputExecutor
 # 
 # All paths must be string but we use pathlib to show which variables are paths
 
-# In[ ]:
+# In[2]:
 
 
 # type of file output from CytoTable (currently only parquet)
 dest_datatype = "parquet"
 
-# common configurations to use based on typical CellProfiler SQLite outputs
-preset = "cellprofiler_sqlite_pycytominer"
 
 # directory where parquet files are saved to
 output_dir = pathlib.Path("./data/converted_data")
 output_dir.mkdir(exist_ok=True, parents=True)
 
 
-# In[ ]:
+# In[3]:
+
+
+# preset configurations based on typical CellProfiler outputs
+preset = "cellprofiler_sqlite_pycytominer"
+# remove Image_Metadata_Plate from SELECT as this metadata was not extracted from file names
+# add Image_Metadata_Site as this is an important metadata when finding where single cells are located
+presets.config["cellprofiler_sqlite_pycytominer"][
+    "CONFIG_JOINS"
+    # create filtered list of image features to be extracted and used for merging tables
+    # with the list of image features, this will merge the objects together using the image number,
+    # and parent objects to create all single cells (all objects associated to one cell)
+] = """WITH Per_Image_Filtered AS (
+                SELECT
+                    Metadata_ImageNumber,
+                    Image_Metadata_Plate,
+                    Image_Metadata_Well,
+                    Image_Metadata_Site
+                FROM
+                    read_parquet('per_image.parquet')
+                )
+            SELECT
+                *
+            FROM
+                Per_Image_Filtered AS per_image
+            LEFT JOIN read_parquet('per_cytoplasm.parquet') AS per_cytoplasm ON
+                per_cytoplasm.Metadata_ImageNumber = per_image.Metadata_ImageNumber
+            LEFT JOIN read_parquet('per_cells.parquet') AS per_cells ON
+                per_cells.Metadata_ImageNumber = per_cytoplasm.Metadata_ImageNumber
+                AND per_cells.Metadata_Cells_Number_Object_Number = per_cytoplasm.Metadata_Cytoplasm_Parent_Cells
+            LEFT JOIN read_parquet('per_nuclei.parquet') AS per_nuclei ON
+                per_nuclei.Metadata_ImageNumber = per_cytoplasm.Metadata_ImageNumber
+                AND per_nuclei.Metadata_Nuclei_Number_Object_Number = per_cytoplasm.Metadata_Cytoplasm_Parent_Nuclei
+                """
+
+
+# In[4]:
 
 
 # set directory for sqlite files
@@ -70,7 +104,7 @@ sqlite_info_dictionary = {
 # 
 # This was not run to completion as we use the nbconverted python file for full run.
 
-# In[ ]:
+# In[5]:
 
 
 # run through each run with each set of paths based on dictionary

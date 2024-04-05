@@ -5,7 +5,7 @@
 
 # ## Import libraries
 
-# In[1]:
+# In[ ]:
 
 
 import pathlib
@@ -17,7 +17,7 @@ from pycytominer.cyto_utils import output
 
 # ## Set paths and variables
 
-# In[2]:
+# In[ ]:
 
 
 # directory where combined parquet file are located
@@ -62,7 +62,7 @@ output(
 print(f"Single cells have been normalized for PBMC cells and saved to {pathlib.Path(normalized_output_file).name} !")
 
 
-# In[4]:
+# In[ ]:
 
 
 # check to see if the features have been normalized
