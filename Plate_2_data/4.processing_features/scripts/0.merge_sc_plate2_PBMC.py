@@ -72,6 +72,9 @@ presets.config["cellprofiler_sqlite_pycytominer"][
 
 
 # set directory for sqlite files
+# the path below is hardcoded to a local directory
+# the data are large and stored on a local secondary drive
+# TODO: Change this path for your local setup
 sqlite_dir = pathlib.Path(
     "/home/lippincm/Desktop/18T/interstellar_data/PBMC_SQLite_Outputs/"
 ).resolve(strict=True)

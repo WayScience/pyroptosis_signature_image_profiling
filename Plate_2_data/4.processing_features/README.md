@@ -28,3 +28,4 @@ For PBMCs run the following code:
 ```bash
 source processing_features_plate2_PBMCs.sh
 ```
+Note that all notebook code is not run, but rather run via converted scripts.

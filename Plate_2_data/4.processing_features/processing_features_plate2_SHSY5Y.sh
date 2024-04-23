@@ -18,7 +18,7 @@ conda activate interstellar_data
 # convert all notebooks to python files into the scripts folder
 jupyter nbconvert --to python --output-dir=scripts/ *.ipynb
 
-# run the python scripts in order (from convert+merge, annotate, normalize, feature select, and extract image features)
+# run the python scripts in order (from convert+merge, annotate, normalize, and feature select)
 echo "Starting processing of plate 2 data"
 
 echo "Converting and merging plate 2 data"
