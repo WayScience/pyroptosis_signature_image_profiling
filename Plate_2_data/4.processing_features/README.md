@@ -16,6 +16,16 @@ For more information regarding the functions that we used, please see [the docum
 
 Using the code below, execute the `sh` file and merge single cells to use for annotation, normalization, and feature selection and extract image features.
 
+There are two different `sh` files for each cell type.
+For SHSY5Y cells run the following code:
+
 ```bash
-source processing_features_plate2.sh
+source processing_features_plate2_SHSY5Y.sh
 ```
+
+For PBMCs run the following code:
+
+```bash
+source processing_features_plate2_PBMCs.sh
+```
+Note that all notebook code is not run, but rather run via converted scripts.

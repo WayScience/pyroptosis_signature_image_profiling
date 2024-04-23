@@ -5,7 +5,7 @@
 
 # ## Import libraries
 
-# In[1]:
+# In[ ]:
 
 
 import sys
@@ -18,7 +18,7 @@ from pycytominer.cyto_utils import output
 
 # ## Set paths and variables
 
-# In[2]:
+# In[ ]:
 
 
 # load in platemap file as a pandas dataframe
@@ -33,7 +33,7 @@ output_dir = pathlib.Path("./data/annotated_data")
 output_dir.mkdir(exist_ok=True)
 
 
-# In[3]:
+# In[ ]:
 
 
 # dictionary with each run for the cell type
@@ -41,45 +41,33 @@ output_dir.mkdir(exist_ok=True)
 run_info_dictionary = {
     "batch_1": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_1.parquet")),
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/SHSY5Y_batch_1.parquet"
+            )
+        ),
     },
     "batch_2": {
         # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_2.parquet"))
-    },
-    "batch_3": {
-        # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_3.parquet"))
-    },
-    "batch_4": {
-        # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_4.parquet"))
-    },
-    "batch_5": {
-        # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_5.parquet")),
-    },
-    "batch_6": {
-        # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_6.parquet"))
-    },
-    "batch_7": {
-        # path to outputted parquet file
-        "single_cell_path": str(pathlib.Path(f"{data_dir}/PBMC_batch_7.parquet"))
+        "single_cell_path": str(
+            pathlib.Path(
+                f"{data_dir}/SHSY5Y_batch_2.parquet"
+            )
+        )
     },
 }
 
 
 # ## Annotate merged single cells
 
-# In[4]:
+# In[ ]:
 
 
-for PBMC_run, info in run_info_dictionary.items():
+for SHSY5Y_run, info in run_info_dictionary.items():
     # load in converted parquet file as df to use in annotate function
     single_cell_df = pd.read_parquet(info["single_cell_path"])
-    output_file = str(pathlib.Path(f"{output_dir}/{PBMC_run}_sc.parquet"))
-    print(f"Adding annotations to merged single cells for {PBMC_run}!")
+    output_file = str(pathlib.Path(f"{output_dir}/{SHSY5Y_run}_sc_SHSY5Y.parquet"))
+    print(f"Adding annotations to merged single cells for {SHSY5Y_run}!")
 
     # add metadata from platemap file to extracted single cell features
     annotated_df = annotate(
@@ -101,12 +89,13 @@ for PBMC_run, info in run_info_dictionary.items():
         output_filename=output_file,
         output_type="parquet",
     )
-    print(f"Annotations have been added to {PBMC_run} and saved!")
+    print(f"Annotations have been added to {SHSY5Y_run} and saved!")
 
 
-# In[5]:
+# In[ ]:
 
 
 # check last annotated df to see if it has been annotated correctly
 print(annotated_df.shape)
 annotated_df.head()
+

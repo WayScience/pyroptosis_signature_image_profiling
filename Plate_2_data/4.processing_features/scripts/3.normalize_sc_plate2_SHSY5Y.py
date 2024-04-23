@@ -28,10 +28,19 @@ output_dir = pathlib.Path("./data/normalized_data")
 output_dir.mkdir(exist_ok=True)
 
 # define input path for combined annotated parquet file
-combined_file_path = str(pathlib.Path(f"{data_dir}/PBMC_sc.parquet"))
+combined_file_path = str(pathlib.Path(f"{data_dir}/SHSY5Y_sc.parquet"))
 
 # define ouput path for normalized parquet file
-normalized_output_file = str(pathlib.Path(f"{output_dir}/PBMC_sc_norm.parquet"))
+normalized_output_file = str(pathlib.Path(f"{output_dir}/SHSY5Y_sc_norm.parquet"))
+
+
+# In[3]:
+
+
+# read in annotated single cell data
+combined_df = pd.read_parquet(combined_file_path)
+metadata_cols = combined_df.columns[combined_df.columns.str.contains("Metadata")]
+metadata_cols
 
 
 # ## Normalize with standardize method with negative control on annotated data
@@ -45,12 +54,12 @@ print("Normalizing annotated merged single cells!")
 
 # normalize annotated data
 normalized_df = normalize(
-    # df with annotated raw merged single cell features
-    profiles=combined_df,
-    # specify samples used as normalization reference (negative control)
-    samples="Metadata_inhibitor == 'DMSO' and Metadata_inhibitor_concentration == 0.025 and Metadata_inducer1 == 'DMSO'",
-    # normalization method used
-    method="standardize",
+        # df with annotated raw merged single cell features
+        profiles=combined_df,
+        # specify samples used as normalization reference (negative control)
+        samples="Metadata_inhibitor == 'DMSO' and Metadata_inhibitor_concentration == 0.025 and Metadata_inducer1 == 'DMSO'",
+        # normalization method used
+        method="standardize",
 )
 
 # save df as parquet file
@@ -59,9 +68,7 @@ output(
     output_filename=normalized_output_file,
     output_type="parquet",
 )
-print(
-    f"Single cells have been normalized for PBMC cells and saved to {pathlib.Path(normalized_output_file).name} !"
-)
+print(f"Single cells have been normalized for SHSY5Y cells and saved to {pathlib.Path(normalized_output_file).name} !")
 
 
 # In[4]:
@@ -70,3 +77,4 @@ print(
 # check to see if the features have been normalized
 print(normalized_df.shape)
 normalized_df.head()
+
